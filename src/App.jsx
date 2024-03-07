@@ -1,5 +1,7 @@
-import { useState } from 'react'
+// import { useState } from 'react'
 import './App.css'
+import ChatBot from './Chat/ChatBot'
+
 
 function App() {
 
@@ -7,7 +9,9 @@ function App() {
   return (
     <>
       <div className=''>
-      sdsvsa
+      <h1>Chat Bot Home Page</h1>
+
+      <ChatBot/>
       </div>
     </>
   )
