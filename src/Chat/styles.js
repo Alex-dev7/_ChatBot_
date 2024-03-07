@@ -18,8 +18,8 @@ export const styles = {
     avatarHello: { 
         // Position
         position: 'absolute', 
-        left: 'calc(-100% - 54px - 48px)', 
-        top: 'calc(50% - 54px)', 
+        left: 'calc(-100% - 54px - 58px)', 
+        top: 'calc(50% - 30px)', 
         // Layering
         zIndex: '10000',
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.172)',
@@ -34,7 +34,7 @@ export const styles = {
     supportWindow: {
         // Position
         position: 'fixed',
-        bottom: '116px',
+        bottom: '136px',
         right: '24px',
         // Size
         width: '420px',
@@ -48,6 +48,7 @@ export const styles = {
         overflow: 'hidden',
         // Shadow
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
+        transition: 'all 0.4s ease',
     },
     emailFormWindow: { 
         width: '100%',  

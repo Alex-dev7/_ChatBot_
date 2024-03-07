@@ -14,6 +14,7 @@ export default function Avatar(props) {
         >Hi, I am your assistent!</div>
 
         <div
+            onClick={() => props.onClick && props.onClick()}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className="chat-buttton"
