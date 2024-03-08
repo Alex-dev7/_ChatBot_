@@ -1,14 +1,14 @@
 export const styles = {
     chatWithMeButton: {
         cursor: 'pointer',
-        boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
+        // boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
         // Border
         borderRadius: '50%',
         // Background 
-        backgroundImage: `url(https://avatars.githubusercontent.com/u/79953221?s=400&u=0eea34b9a6d6fecb3d8a0b9a84fcd60f707fc2e1&v=4)`, 
+        backgroundImage: `url(robot.png)`, 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: 'center',
-        backgroundSize: '84px',
+        backgroundSize: 'cover',
         // Size
         width: '84px',
         height: '84px',
@@ -44,14 +44,28 @@ export const styles = {
         backgroundColor: 'white',
         // Border
         borderRadius: '12px',
-        border: `2px solid #7a39e0`,
+        border: `2px solid #010003`,
         overflow: 'hidden',
         // Shadow
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
         transition: 'all 0.4s ease',
     },
     emailFormWindow: { 
+        fontSize: '20px',
+        fontWeight: '600',
+        color: '#00398e',
+        position: 'relative',
+        backgroundColor: "#fffffffe",
+        backgroundImage: `url(wave.svg)`, 
+        backgroundRepeat: 'no-repeat',
+        backgroundPosition: '50% 65%',
+        backgroundSize: 'fill',
+        textAlign: 'center',
         width: '100%',  
+        height: '100%',
+        display: 'flex',
+        flexDirection: 'column',
+        gap: '12px',
         overflow: 'hidden',
         transition: "all 0.5s ease",
         WebkitTransition: "all 0.5s ease",
@@ -73,13 +87,15 @@ export const styles = {
         fontSize: '24px', 
         fontWeight: '600',
     },
-    emailInput: { 
+    nameInput: { 
         width: '66%',
+        fontSize: '17px',
         textAlign: 'center',
         outline: 'none',
-        padding: '12px',
+        padding: '10px',
         borderRadius: '12px',
-        border: '2px solid #7a39e0',
+        border: '2px solid #000306ff',
+        backgroundColor: "#006bde9c",
     },
     bottomText: { 
         position: 'absolute', 
@@ -106,5 +122,31 @@ export const styles = {
     chatEngineWindow: {
         width: '100%',  
         backgroundColor: '#fff',
+    },
+    okButton: {
+        display: 'block',
+        margin: "4px auto",
+        fontSize: '24px',
+        textAlign: 'center',
+        outline: 'none',
+        padding: '10px',
+        border: 'none',
+        backgroundColor: "transparent",
+        cursor: 'pointer',
+        transition: 'all 0.2s ease',
+    },
+    skip: {
+        position: 'absolute',
+        bottom: '-25%',
+        left: '50%',
+        transform: 'translateX(-50%)',
+        textDecoration: 'underline',
+        textAlign: 'center',
+        color: '#000000',
+        fontSize: '17px',
+        fontWeight: '600',
+        cursor: 'pointer',
     }
+
+    
 }

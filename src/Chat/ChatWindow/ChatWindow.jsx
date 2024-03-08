@@ -1,4 +1,5 @@
 import { styles } from '../styles'
+import Welcome from './Welcome'
 
 export default function ChatWindow(props) {
   return (
@@ -7,6 +8,7 @@ export default function ChatWindow(props) {
         ...{opacity: props.visible ? 1 : 0}
     }}
     >
+        <Welcome />
 
     </div>
   )

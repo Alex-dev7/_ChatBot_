@@ -18,6 +18,10 @@
   filter: drop-shadow(0 0 2em #61dafbaa);
 }
 
+.placeholder-color::placeholder {
+  color: rgb(211, 211, 211);
+}
+
 @keyframes logo-spin {
   from {
     transform: rotate(0deg);
