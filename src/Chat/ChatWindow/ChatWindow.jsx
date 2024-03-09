@@ -1,7 +1,7 @@
 import {  useEffect, useState } from 'react'
 import { styles } from '../styles'
 import Welcome from './Welcome'
-import ChatThread from './ChatThread'
+import ChatThread from './thread/ChatThread'
 
 export default function ChatWindow(props) {
     const [user, setUser] = useState(null)
@@ -21,7 +21,9 @@ export default function ChatWindow(props) {
         />
 
         <ChatThread 
-            visible={user !== null}    
+            visible={user !== null}   
+            user={user}
+            thread={thread} 
         />
 
 

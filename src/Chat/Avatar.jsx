@@ -10,7 +10,7 @@ export default function Avatar(props) {
     <div style={props.style}>
         <div
             style={{ ...styles.avatarHello,
-            ...{opacity: hovered ? 1 : 0}}}
+            ...{opacity: hovered ? "1" : "0"}}}
         >Ask me something!</div>
 
         <div
