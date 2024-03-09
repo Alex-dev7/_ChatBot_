@@ -146,7 +146,17 @@ export const styles = {
         fontSize: '17px',
         fontWeight: '600',
         cursor: 'pointer',
-    }
+    }, 
 
     
+
+    // ChatThread
+    chatThread: {
+        position: 'relative',
+        width: '100%',
+        height: '100%',
+        overflow: 'hidden',
+        backgroundColor: '#024223',
+    
+    }
 }
