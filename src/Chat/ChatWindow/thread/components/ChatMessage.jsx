@@ -13,7 +13,7 @@ function ChatMessage({ message }) {
             <div style={threadStyles.avatarContainer}>
                 <div style={threadStyles.avatar} />
                 <span style={threadStyles.avatarName}>
-                    {message.user === "gpt" ? "Assistant" : "You"}
+                    {message.user === "gpt" ? "Green Guru" : "You"}
                 </span>
             </div>
             <div style={threadStyles.message}>{message.message}</div>

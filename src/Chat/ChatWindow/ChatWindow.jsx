@@ -1,4 +1,4 @@
-import {   useState } from 'react'
+import { useState, useEffect } from 'react'
 import { styles } from '../styles'
 import Welcome from './Welcome'
 import ChatThread from './thread/ChatThread'
@@ -6,6 +6,7 @@ import ChatThread from './thread/ChatThread'
 export default function ChatWindow(props) {
     const [user, setUser] = useState(null)
     const [threadId, setThreadId] = useState(null)
+    const [data, setData] = useState(null)
 
 
   return (
