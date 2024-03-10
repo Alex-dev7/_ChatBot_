@@ -1,11 +1,11 @@
-import {  useEffect, useState } from 'react'
+import {   useState } from 'react'
 import { styles } from '../styles'
 import Welcome from './Welcome'
 import ChatThread from './thread/ChatThread'
 
 export default function ChatWindow(props) {
     const [user, setUser] = useState(null)
-    const [thread, setThread] = useState(null)
+    const [threadId, setThreadId] = useState(null)
 
 
   return (
@@ -16,14 +16,14 @@ export default function ChatWindow(props) {
     >
         <Welcome
             setUser={user => setUser(user)}
-            setThread={thread => setThread(thread)}
-            visible={user === null}
+            setThreadId={threadId => setThreadId(threadId)}
+            visible={user === null && threadId === null} 
         />
 
         <ChatThread 
-            visible={user !== null}   
+            visible={user !== null && threadId !== null}   
             user={user}
-            thread={thread} 
+            threadId={threadId} 
         />
 
 

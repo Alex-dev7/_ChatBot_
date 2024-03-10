@@ -8,23 +8,45 @@ function Welcome(props) {
 
     useEffect(() => {
         const storedName = window.localStorage.getItem("user");
-        if (storedName) {
+        const storedId = window.localStorage.getItem("threadId");
+
+        if (storedName && storedId) {
             setName(storedName);
             props.setUser(storedName);
+            props.setThreadId(storedId);
         }
     }, []);
 
     useEffect(() => {
         window.localStorage.setItem("user", name);
+        // window.localStorage.setItem("threadId", props.threadId);
     }, [name]);
 
-    function handleSubmit(event) {
+   async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
         props.setUser(name);
         // props.setThread("kjhgh")
         console.log("submitting", name);
+
+
+                // fetch a threadId 
+                const response = await fetch("http://localhost:4000/thread", {
+                    method: "GET",
+                    headers: {
+                      "Content-Type": "application/json"
+                    },
+                  })
+                  const data = await response.json()
+                  console.log(data)
+                  props.setThreadId(data.threadId)
+                  window.localStorage.setItem("threadId", data.threadId);
+                  
+                //   setLoading(false);
     }
+
+
+
 
     return (
         <div

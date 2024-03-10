@@ -54,6 +54,10 @@ export const threadStyles = {
         paddingLeft: '41px',
     },
     chatInputContainer: {
+
+      
+    },
+    formContainer: {
         with: '100%',
         height: '60px',
         position: 'absolute',
@@ -62,7 +66,6 @@ export const threadStyles = {
         right: '5%',
         display: 'flex',
         alignItems: 'center',
-      
     },
     chatInputArea: {
         width: '100%',
