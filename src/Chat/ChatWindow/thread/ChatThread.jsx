@@ -30,13 +30,14 @@ function ChatThread(props) {
           },
           body: JSON.stringify({
             threadId: props.threadId,
-            message: chatLog
-            .filter((message) => message.user === "user")
-            .map((message) => message.message)
-            .join("")
+            message: inputText,
+            // .filter((message) => message.user === "user")
+            // .map((message) => message.message)
+            // .join("")
           })
         })
         const data = await response.json()
+        setChatLog([...chatLog, {user: "gpt", message: data.messages[0][0].text.value}])
         console.log(data)
     }
 

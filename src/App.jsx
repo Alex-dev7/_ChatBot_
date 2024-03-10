@@ -5,7 +5,7 @@ function App() {
   return (
     <>
       <div className="">
-        <h1>Chat Bot Home Page</h1>
+        <h1>Environmental Awareness Bot</h1>
 
         <ChatBot />
       </div>
