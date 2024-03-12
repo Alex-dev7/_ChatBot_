@@ -41,7 +41,7 @@ export const styles = {
         height: '530px',
         maxWidth: 'calc(100% - 48px)',
         maxHeight: 'calc(100% - 48px)',
-        backgroundColor: 'white',
+        backgroundColor: '#01000300',
         // Border
         borderRadius: '12px',
         border: `2px solid #010003`,

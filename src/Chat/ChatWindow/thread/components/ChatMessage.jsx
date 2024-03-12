@@ -1,4 +1,4 @@
-import React from "react";
+import ReactMarkdown from "react-markdown";
 import { threadStyles } from "../threadStyles";
 
 function ChatMessage({ message }) {
@@ -16,7 +16,14 @@ function ChatMessage({ message }) {
                     {message.user === "gpt" ? "Green Guru" : "You"}
                 </span>
             </div>
-            <div style={threadStyles.message}>{message.message}</div>
+            <div style={threadStyles.message}>
+                {message.user === "gpt" ?
+                <ReactMarkdown>
+                    {message.message}
+                </ReactMarkdown>
+                :
+                message.message}
+            </div>
         </div>
     );
 }

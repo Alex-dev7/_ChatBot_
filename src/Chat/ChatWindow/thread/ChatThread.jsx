@@ -17,29 +17,29 @@ function ChatThread(props) {
 
 const id = window.localStorage.getItem("threadId");
 
-    useEffect(() => {
+  //   useEffect(() => {
       
-      async function getMessagesList(id) {
-        // const storedId = window.localStorage.getItem("threadId");
-        if (id) {
-          console.log(id)
-        // fetch request to the API 
-        const response = await fetch(`http://localhost:4000/list/${id}`);
-        const list = await response.json() 
-        // setChatLog([...chatLog, {user: "gpt", message: list.messages[0][0].text.value}])
-        const newMessages = [...list.messages].reverse().map((message, index) => {
-          const user = index % 2 === 0 ? "user" : "gpt";
-          return { user, message: message[0]?.text?.value };
-        });
+  //     async function getMessagesList(id) {
+  //       // const storedId = window.localStorage.getItem("threadId");
+  //       if (id) {
+  //         console.log(id)
+  //       // fetch request to the API 
+  //       const response = await fetch(`http://localhost:4000/list/${id}`);
+  //       const list = await response.json() 
+  //       // setChatLog([...chatLog, {user: "gpt", message: list.messages[0][0].text.value}])
+  //       const newMessages = [...list.messages].reverse().map((message, index) => {
+  //         const user = index % 2 === 0 ? "user" : "gpt";
+  //         return { user, message: message[0]?.text?.value };
+  //       });
         
         
-        setChatLog([...chatLog, ...newMessages]);
-        console.log(list) 
-        }
-    }
-    getMessagesList(id)
+  //       setChatLog([ ...newMessages]);
+  //       console.log(list) 
+  //       }
+  //   }
+  //   getMessagesList(id)
       
-  }, [id])
+  // }, [id])
 
    
 

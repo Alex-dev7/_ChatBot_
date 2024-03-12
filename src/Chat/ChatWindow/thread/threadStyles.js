@@ -7,7 +7,7 @@ export const threadStyles = {
         width: '100%',
         height: '100%',
         overflow: 'hidden',
-        backgroundColor: '#032513ff',
+        backgroundColor: '#023e1e2b',
         fontSize: '16px',
 
     },
@@ -70,7 +70,7 @@ export const threadStyles = {
     chatInputArea: {
         width: '100%',
         // height: '40px',
-        
+        backgroundColor: '#008d9268',
         fontSize: '16px',
         borderRadius: '10px',
         border: 'none',
