@@ -22,6 +22,36 @@
   background-repeat: no-repeat;
   background-position: center;
   position: relative;
+
+}
+
+.tree-div {
+  position: fixed;
+  top:0;
+  left: 0;
+  height: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 0 auto;
+  z-index: 1;
+}
+.tree {
+  height: 100%;
+  width: 100%;
+  max-width: 2300px;
+  object-fit: cover;
+  opacity: 0.3;
+  margin: 0 auto;
+  transition: all 0.5s ease-out;
+
+}
+
+.tree:hover {
+  opacity: 1;
+  transform: scale(1.001);
+  cursor: pointer;
 }
 
 .header-container {

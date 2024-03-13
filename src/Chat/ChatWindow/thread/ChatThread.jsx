@@ -58,9 +58,6 @@ const id = window.localStorage.getItem("threadId");
           body: JSON.stringify({
             threadId: props.threadId,
             message: inputText,
-            // .filter((message) => message.user === "user")
-            // .map((message) => message.message)
-            // .join("")
           })
         })
         const data = await response.json()
@@ -82,25 +79,6 @@ const id = window.localStorage.getItem("threadId");
                   <ChatMessage key={index} message={message} />
               ))}
               
-
-                {/* <div
-                    style={{
-                        ...threadStyles.chatMessage,
-                        backgroundColor: "#21342aff",
-                    }}
-                >
-                    <div style={threadStyles.avatarContainer}>
-                        <div style={threadStyles.avatar} />
-                        <span style={threadStyles.avatarName}>Assistant</span>
-                    </div>
-                    <div style={threadStyles.message}>
-                        Lorem ipsum, dolor sit amet consectetur adipisicing
-                        elit. Odio, laborum fugiat iure nisi nulla quaerat
-                        molestiae sequi qui quidem cumque provident
-                        exercitationem deserunt magni praesentium, soluta
-                        consequatur numquam, veritatis ab.
-                    </div>
-                </div> */}
             </div>
             <div style={threadStyles.chatInputContainer}>
                 <form

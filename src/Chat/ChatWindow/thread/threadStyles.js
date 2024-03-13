@@ -70,7 +70,7 @@ export const threadStyles = {
     chatInputArea: {
         width: '100%',
         // height: '40px',
-        backgroundColor: '#008d9268',
+        backgroundColor: '#008f945e',
         fontSize: '16px',
         borderRadius: '10px',
         border: 'none',

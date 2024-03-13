@@ -13,14 +13,22 @@ export default function Avatar(props) {
             ...{opacity: hovered ? "1" : "0"}}}
         >Ask me something!</div>
 
-        <div
+        {/* <div
             onClick={() => props.onClick && props.onClick()}
             onMouseEnter={() => setHovered(true)}
             onMouseLeave={() => setHovered(false)}
             className="chat-buttton"
             style={{ ...styles.chatWithMeButton, ...{ transform: hovered ? 'translateY(10%)' : 'translateY(4%)' }}}
-        />
+        /> */}
+        <div className="tree-div"
+          onClick={() => props.onClick && props.onClick()}
+          onMouseEnter={() => setHovered(true)}
+          onMouseLeave={() => setHovered(false)}
+        >
+          <img src="tree.svg" alt="tree" className="tree"/>
+      </div>
     </div>
+    
   )
 }
 
