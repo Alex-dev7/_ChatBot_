@@ -44,7 +44,7 @@
   object-fit: cover;
   opacity: 0.3;
   margin: 0 auto;
-  transition: all 0.5s ease-out;
+  transition: all 0.3s ease;
 
 }
 
@@ -52,6 +52,12 @@
   opacity: 1;
   transform: scale(1.001);
   cursor: pointer;
+}
+
+.tree:active {
+  transform: scale(1.02);
+  opacity: 0.5;
+  transition: all 0.1s ease;
 }
 
 .header-container {

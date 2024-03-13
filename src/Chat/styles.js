@@ -18,10 +18,11 @@ export const styles = {
     avatarHello: { 
         // Position
         position: 'absolute', 
-        left: 'calc(-100% - 54px - 58px)', 
-        top: 'calc(50% - 30px)', 
+        left: '0vw', 
+        top: '20vh', 
+        fontSize: '18px',
         // Layering
-        zIndex: '10000',
+        zIndex: '1000',
         boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.172)',
         // Border
         padding: '12px 12px 12px 16px',
@@ -42,22 +43,22 @@ export const styles = {
         height: '530px',
         maxWidth: 'calc(100% - 48px)',
         maxHeight: 'calc(100% - 48px)',
-        backgroundColor: '#01000300',
+        backgroundColor: '#a7aa0235',
         // Border
         borderRadius: '12px',
-        border: `2px solid #010003`,
+        // border: `1px solid #02811f57`,
         overflow: 'hidden',
         // Shadow
-        boxShadow: '0px 0px 16px 6px rgba(0, 0, 0, 0.33)',
+        boxShadow: '0px 0px 29px 3px rgba(99, 106, 6, 0.349)',
         transition: 'all 0.4s ease',
     },
     emailFormWindow: { 
         fontSize: '20px',
         fontWeight: '600',
-        color: '#00398e',
+        color: '#277b39fe',
         position: 'relative',
-        backgroundColor: "#fffffffe",
-        backgroundImage: `url(wave.svg)`, 
+        backgroundColor: "#ffffff00",
+        // backgroundImage: `url(wave.svg)`, 
         backgroundRepeat: 'no-repeat',
         backgroundPosition: '50% 65%',
         backgroundSize: 'fill',
@@ -77,7 +78,7 @@ export const styles = {
         top: '-45px',
         width: '100%',
         height: '308px',
-        backgroundColor: '#7a39e0',
+        // backgroundColor: '#7a39e0',
         transform: 'skewY(-12deg)',
     },
     topText: { 
@@ -95,8 +96,9 @@ export const styles = {
         outline: 'none',
         padding: '10px',
         borderRadius: '12px',
-        border: '2px solid #000306ff',
-        backgroundColor: "#006bde9c",
+        // border: '2px solid #000306ff',
+        backgroundColor: "#00b5de5d",
+        border: 'none',
     },
     bottomText: { 
         position: 'absolute', 

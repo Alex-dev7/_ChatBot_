@@ -11,7 +11,7 @@ export default function Avatar(props) {
         <div
             style={{ ...styles.avatarHello,
             ...{opacity: hovered ? "1" : "0"}}}
-        >Ask me something!</div>
+        >click to interact</div>
 
         {/* <div
             onClick={() => props.onClick && props.onClick()}
