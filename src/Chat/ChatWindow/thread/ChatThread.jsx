@@ -70,7 +70,7 @@ const id = window.localStorage.getItem("threadId");
 
 
     return (
-    <div style={ props.expandWindow ? threadStyles.chatThreadExpanded  : threadStyles.chatThread }>
+    <div style={{ ...threadStyles.chatThread }}>
             <div
                 className="chatLogContainer"
                 style={threadStyles.chatLogContainer}

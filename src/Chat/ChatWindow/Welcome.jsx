@@ -51,7 +51,7 @@ function Welcome(props) {
     return (
         <div
             style={{
-                ...( props.expandWindow ? styles.welcomeWindowExpanded : styles.welcomeWindow),
+                ...styles.welcomeWindow,
                 ...{
                     height: props.visible ? "100%" : "0%",
                     opacity: props.visible ? "1" : "0",
@@ -67,10 +67,15 @@ function Welcome(props) {
                 <span  style={{...styles.loadingIcon, animationDuration: '15s'}}/>
             </div>}
              
-            <h3>Welcome to [name]</h3>
-            <p>
-                I am your personal <br /> assistant.
-            </p>
+            <h3>Welcome to Green Guru</h3>
+            <div>
+                <p>I'm here to help you understand the importance of protecting our environment.</p>
+                <h5>Let's work together to make our planet a better place!</h5>                
+            </div>
+
+            {/* <p>
+                I can provide information on various environmental topics, suggest ways to reduce your carbon footprint, and answer any questions you might have about environmental sustainability. 
+            </p>  */}
             <form
                 onSubmit={(e) => handleSubmit(e)}
                 style={{ position: "relative", width: "100%", top: "23%" }}
