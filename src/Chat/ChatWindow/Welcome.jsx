@@ -51,7 +51,7 @@ function Welcome(props) {
     return (
         <div
             style={{
-                ...styles.emailFormWindow,
+                ...( props.expandWindow ? styles.welcomeWindowExpanded : styles.welcomeWindow),
                 ...{
                     height: props.visible ? "100%" : "0%",
                     opacity: props.visible ? "1" : "0",

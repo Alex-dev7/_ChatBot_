@@ -6,11 +6,22 @@ export const threadStyles = {
         position: 'relative',
         width: '100%',
         height: '100%',
+        paddingTop: '23px',
         overflow: 'hidden',
         backgroundColor: '#023e1e2b',
         fontSize: '16px',
 
     },
+    // chatThreadExpanded: {
+    //     display: 'flex',
+    //     flexDirection: 'column',
+    //     position: 'relative',
+    //     width: '80vw',
+    //     height: '80vh',
+    //     overflow: 'hidden',
+    //     backgroundColor: '#023e1e2b',
+    //     fontSize: '16px',
+    // },
     chatLogContainer: {
         width: '100%',
         height: 'calc(100% - 90px)',

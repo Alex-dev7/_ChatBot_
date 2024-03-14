@@ -19,11 +19,10 @@ function ChatBot() {
   }, [ref]);
 
   return (
-    <div ref={ref}>
+    <div  ref={ref}>
       <ChatWindow visible={visible} />
       <Avatar
-        onClick={() => setVisible(visible => !visible)}
-        // style={{ position: "absolute", top: "0", right: "0"}}
+        onClick={() => setVisible((visible) => !visible)}
       />
     </div>
   );

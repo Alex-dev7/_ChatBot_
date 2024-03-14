@@ -49,15 +49,16 @@
 }
 
 .tree:hover {
-  opacity: 1;
-  transform: scale(1.001);
+  opacity: 0.8;
+  /* transform: scale(1.001); */
   cursor: pointer;
 }
 
-.tree:active {
+.hoverArea:active {
   transform: scale(1.02);
   opacity: 0.5;
   transition: all 0.1s ease;
+  
 }
 
 .header-container {
