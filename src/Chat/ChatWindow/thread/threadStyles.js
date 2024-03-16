@@ -6,7 +6,7 @@ export const threadStyles = {
         position: 'relative',
         width: '100%',
         height: '100%',
-        paddingTop: '23px',
+        paddingTop: '30px',
         overflow: 'hidden',
         backgroundColor: '#023e1e2b',
         fontSize: '16px',
@@ -15,7 +15,8 @@ export const threadStyles = {
     chatLogContainer: {
         width: '100%',
         height: 'calc(100% - 90px)',
-        padding: '14px 0',
+        // padding: '14px',
+        paddingBottom: '50px',
         textAlign: 'left',
         display: 'flex',
         flexDirection: 'column',
@@ -36,7 +37,7 @@ export const threadStyles = {
         alignItems: 'center',
         gap: '10px',
         width: '100%',
-        // padding: '12px 0',
+        paddingTop: '12px',
     },
     avatar: {
         backgroundColor: 'white',
@@ -50,9 +51,9 @@ export const threadStyles = {
         fontWeight: '700',
     },
     message: {
-        padding: '12px',
+        // padding: '0px',
         width: '84%',
-        paddingLeft: '41px',
+        paddingLeft: '42px',
     },
     chatInputContainer: {
 
@@ -71,7 +72,7 @@ export const threadStyles = {
     chatInputArea: {
         width: '100%',
         // height: '40px',
-        backgroundColor: '#008f945e',
+        backgroundColor: '#0000007b',
         fontSize: '16px',
         borderRadius: '10px',
         border: 'none',

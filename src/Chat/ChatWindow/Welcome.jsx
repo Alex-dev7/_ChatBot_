@@ -12,7 +12,7 @@ function Welcome(props) {
 
         if (storedName && storedId) {
             setName(storedName);
-            props.setUser(storedName);
+            // props.setUser(storedName);
             props.setThreadId(storedId);
         }
     }, []);
@@ -25,7 +25,7 @@ function Welcome(props) {
    async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        props.setUser(name);
+        // props.setUser(name);
         // props.setThread("kjhgh")
         console.log("submitting", name);
 
@@ -67,10 +67,10 @@ function Welcome(props) {
                 <span  style={{...styles.loadingIcon, animationDuration: '15s'}}/>
             </div>}
              
-            <h3>Welcome to Green Guru</h3>
+            <h3>Welcome, I'm the Green Guru</h3>
             <div>
-                <p>I'm here to help you understand the importance of protecting our environment.</p>
-                <h5>Let's work together to make our planet a better place!</h5>                
+                <h5>I'm here to help you understand the importance of protecting our environment.</h5>
+                             
             </div>
 
             {/* <p>
@@ -80,7 +80,7 @@ function Welcome(props) {
                 onSubmit={(e) => handleSubmit(e)}
                 style={{ position: "relative", width: "100%", top: "23%" }}
             >
-                <p style={{ fontSize: "17px", color: "black" }}>
+                <p style={{ fontSize: "17px",  }}>
                     What should I call you?
                 </p>
                 <input

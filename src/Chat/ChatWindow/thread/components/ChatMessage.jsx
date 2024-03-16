@@ -10,8 +10,10 @@ function ChatMessage({ message }) {
                     message.user === "gpt" ? "#008f945e" : "",
             }}
         >
-            <div style={threadStyles.avatarContainer}>
-                <div style={threadStyles.avatar} />
+          <div style={threadStyles.avatarContainer}>
+                <div style={{...threadStyles.avatar, 
+                    backgroundColor:
+                    message.user === "gpt" ? "#0d91017d" : "#f2eb13d3",}} />
                 <span style={threadStyles.avatarName}>
                     {message.user === "gpt" ? "Green Guru" : "You"}
                 </span>

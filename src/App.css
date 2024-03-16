@@ -61,6 +61,11 @@
   
 }
 
+#chatInput:focus {
+  outline: none;
+  background-color: #f2eb13d3;
+}
+
 .header-container {
   position: absolute;
   top: 15%;

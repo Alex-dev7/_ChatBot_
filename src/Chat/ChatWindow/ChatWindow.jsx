@@ -1,16 +1,16 @@
-import { useState, useEffect } from 'react'
+import { useState } from 'react'
 import { styles } from '../styles'
 import Welcome from './Welcome'
 import ChatThread from './thread/ChatThread'
 
 export default function ChatWindow(props) {
-    const [user, setUser] = useState(null)
+    // const [user, setUser] = useState(null)
     const [threadId, setThreadId] = useState(null)
     const [data, setData] = useState(null)
     const [expandWindow, setExpandWindow] = useState(false)
 
 
-
+// console.log(user)
 
   return (
     <div
@@ -20,6 +20,7 @@ export default function ChatWindow(props) {
        
     }}
     >
+     
         <div style={styles.expand}
         onClick={() => setExpandWindow(() => !expandWindow)}
         >
@@ -31,15 +32,15 @@ export default function ChatWindow(props) {
             </svg>
         </div>
         <Welcome
-            setUser={user => setUser(user)}
+            // setUser={user => setUser(user)}
             setThreadId={threadId => setThreadId(threadId)}
-            visible={user === null && threadId === null} 
+            visible={ threadId === null} 
             expandWindow={expandWindow}
         />
 
         <ChatThread 
-            visible={user !== null && threadId !== null}   
-            user={user}
+            visible={ threadId !== null}   
+            // user={user}
             threadId={threadId} 
             expandWindow={expandWindow}
         />
