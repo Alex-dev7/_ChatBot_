@@ -8,7 +8,7 @@ function ChatBot() {
 
   useEffect(() => {
     function handleClickOutside(event) {
-      if (ref.current && !ref.current.contains(event.target)) {
+      if (!ref.current.contains(event.target)) {
         setVisible(false);
       }
     }
@@ -19,8 +19,11 @@ function ChatBot() {
   }, [ref]);
 
   return (
-    <div  ref={ref}>
-      <ChatWindow visible={visible} />
+    <div  >
+      <div ref={ref}>
+        <ChatWindow visible={visible} />
+      </div>
+      
       <Avatar
         onClick={() => setVisible((visible) => !visible)}
       />

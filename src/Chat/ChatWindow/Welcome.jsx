@@ -12,41 +12,33 @@ function Welcome(props) {
 
         if (storedName && storedId) {
             setName(storedName);
-            // props.setUser(storedName);
             props.setThreadId(storedId);
         }
     }, []);
 
     useEffect(() => {
         window.localStorage.setItem("user", name);
-        // window.localStorage.setItem("threadId", props.threadId);
     }, [name]);
 
-   async function handleSubmit(event) {
+    async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        // props.setUser(name);
-        // props.setThread("kjhgh")
         console.log("submitting", name);
 
+        // fetch a threadId
+        const response = await fetch("http://localhost:4000/thread", {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        });
+        const data = await response.json();
+        console.log(data);
+        props.setThreadId(data.threadId);
+        window.localStorage.setItem("threadId", data.threadId);
 
-                // fetch a threadId 
-                const response = await fetch("http://localhost:4000/thread", {
-                    method: "GET",
-                    headers: {
-                      "Content-Type": "application/json"
-                    },
-                  })
-                  const data = await response.json()
-                  console.log(data)
-                  props.setThreadId(data.threadId)
-                  window.localStorage.setItem("threadId", data.threadId);
-                  
-                //   setLoading(false);
+          setLoading(false);
     }
-
-
-
 
     return (
         <div
@@ -58,31 +50,64 @@ function Welcome(props) {
                 },
             }}
         >
-            
-            {loading && <div style={{...styles.loadingDiv, animation: loading ? "logo-spin infinite 5s linear" : "none",}} >
-                <p style={{color: "white", fontFamily: "revert-layer", fontSize: "14px"}}>loading assistant...</p>
-                <span  style={{...styles.loadingIcon, animationDuration: '9s'}}/>
-                <span  style={{...styles.loadingIcon, animationDuration: '5s'}}/>
-                <span  style={{...styles.loadingIcon, animationDuration: '10s'}}/>
-                <span  style={{...styles.loadingIcon, animationDuration: '15s'}}/>
-            </div>}
-             
+            {loading && (
+                <div
+                    style={{
+                        ...styles.loadingDiv,
+                        animation: loading
+                            ? "logo-spin infinite 5s linear"
+                            : "none",
+                    }}
+                >
+                    <p
+                        style={{
+                            color: "white",
+                            fontFamily: "revert-layer",
+                            fontSize: "14px",
+                        }}
+                    >
+                        loading assistant...
+                    </p>
+                    <span
+                        style={{
+                            ...styles.loadingIcon,
+                            animationDuration: "9s",
+                        }}
+                    />
+                    <span
+                        style={{
+                            ...styles.loadingIcon,
+                            animationDuration: "5s",
+                        }}
+                    />
+                    <span
+                        style={{
+                            ...styles.loadingIcon,
+                            animationDuration: "10s",
+                        }}
+                    />
+                    <span
+                        style={{
+                            ...styles.loadingIcon,
+                            animationDuration: "15s",
+                        }}
+                    />
+                </div>
+            )}
+
             <h3>Welcome, I'm the Green Guru</h3>
             <div>
-                <h5>I'm here to help you understand the importance of protecting our environment.</h5>
-                             
+                <h5>
+                    I can provide information on various environmental topics,
+                    suggest ways to reduce your carbon footprint, and answer any
+                    questions you might have about environmental sustainability.
+                </h5>
             </div>
-
-            {/* <p>
-                I can provide information on various environmental topics, suggest ways to reduce your carbon footprint, and answer any questions you might have about environmental sustainability. 
-            </p>  */}
             <form
                 onSubmit={(e) => handleSubmit(e)}
                 style={{ position: "relative", width: "100%", top: "23%" }}
             >
-                <p style={{ fontSize: "17px",  }}>
-                    What should I call you?
-                </p>
+                <p style={{ fontSize: "17px" }}>What should I call you?</p>
                 <input
                     style={styles.nameInput}
                     onChange={(e) => setName(e.target.value)}
