@@ -1,5 +1,6 @@
 import "./App.css";
 import ChatBot from "./Chat/ChatBot";
+import About from "./components/About";
 import Nav from "./components/Nav";
 
 function App() {
@@ -11,6 +12,7 @@ function App() {
 
         <ChatBot />
       </div>
+      <About />
     </main>
   );
 }

@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import { styles } from "../styles";
+import Spinner from "../../components/Spinner";
 
 function Welcome(props) {
     const [name, setName] = useState("");
@@ -50,50 +51,7 @@ function Welcome(props) {
                 },
             }}
         >
-            {loading && (
-                <div
-                    style={{
-                        ...styles.loadingDiv,
-                        animation: loading
-                            ? "logo-spin infinite 5s linear"
-                            : "none",
-                    }}
-                >
-                    <p
-                        style={{
-                            color: "white",
-                            fontFamily: "revert-layer",
-                            fontSize: "14px",
-                        }}
-                    >
-                        loading assistant...
-                    </p>
-                    <span
-                        style={{
-                            ...styles.loadingIcon,
-                            animationDuration: "9s",
-                        }}
-                    />
-                    <span
-                        style={{
-                            ...styles.loadingIcon,
-                            animationDuration: "5s",
-                        }}
-                    />
-                    <span
-                        style={{
-                            ...styles.loadingIcon,
-                            animationDuration: "10s",
-                        }}
-                    />
-                    <span
-                        style={{
-                            ...styles.loadingIcon,
-                            animationDuration: "15s",
-                        }}
-                    />
-                </div>
-            )}
+            {loading && <Spinner/>}
 
             <h3>Welcome, I'm the Green Guru</h3>
             <div>
