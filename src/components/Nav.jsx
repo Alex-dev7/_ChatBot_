@@ -1,9 +1,10 @@
+import { Link } from "react-router-dom"
 
 
 function Nav() {
   return (
     <nav className="navigation-container">
-        <a href="#about">About</a>
+        <Link to="/about">About</Link>
     </nav>
   )
 }

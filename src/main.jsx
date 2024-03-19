@@ -1,14 +1,14 @@
 import React from 'react'
 import ReactDOM from 'react-dom/client'
-import App from './App.jsx'
 import './index.css'
+import { RouterProvider } from 'react-router-dom';
+import router from './router';
 // import ChatBot from './Chat/chatBot.jsx'
 
 // const path = window.location.pathname
-
-ReactDOM.createRoot(document.getElementById('root')).render(
+const root = ReactDOM.createRoot(document.getElementById('root'));
+root.render(
   <React.StrictMode>
-  {/* { path.indexOf('/chat') === -1 ?  <App /> : <ChatBot/> } */}
-  <App />
-  </React.StrictMode>,
-)
+    <RouterProvider router={router}/>
+  </React.StrictMode>
+);
