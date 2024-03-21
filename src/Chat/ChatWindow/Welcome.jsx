@@ -5,7 +5,7 @@ import Spinner from "../../components/Spinner";
 function Welcome(props) {
     const [name, setName] = useState("");
     const [loading, setLoading] = useState(false);
-    const [inputValue, setInputValue] = useState("Your Name");
+    const [inputValue, setInputValue] = useState("");
 
     useEffect(() => {
         const storedName = window.localStorage.getItem("user");
@@ -53,7 +53,7 @@ function Welcome(props) {
         >
             {loading && <Spinner/>}
 
-            <h3>Welcome, I'm the Green Guru</h3>
+            <h3>Welcome, I am the Green Guru</h3>
             <div>
                 <h5>
                     I can provide information on various environmental topics,
