@@ -29,6 +29,7 @@ export const threadStyles = {
         // alignItems: 'center',
         width: "100%",
         height: "auto",
+        
     },
     avatarContainer: {
         display: "flex",

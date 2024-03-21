@@ -54,13 +54,15 @@ function ChatThread(props) {
         console.log(chatLog);
     }, []);
 
+
+
     // fetch data on submit
     async function handleSubmit(event) {
         event.preventDefault();
-        setUserPrompt(inputText);
-        console.log("submitting");
-        setChatLog([...chatLog, { user: "user", message: `${inputText}` }]);
-        setInpuText("");
+        // setUserPrompt(inputText);
+        let newChatLog = [...chatLog, { user: "user", message: `${inputText}` }]
+        setChatLog(newChatLog)
+       setInpuText("")
 
         // fetch request to the API
         const response = await fetch("http://localhost:4000/message", {
@@ -73,10 +75,10 @@ function ChatThread(props) {
                 message: inputText,
             }),
         });
+         setInpuText("");
         const data = await response.json();
         setChatLog([
-            ...chatLog,
-            { user: "user", message: `${userPrompt}` },
+            ...newChatLog,
             { user: "gpt", message: data.messages[0][0].text.value },
         ]);
     }

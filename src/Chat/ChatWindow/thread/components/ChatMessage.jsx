@@ -6,7 +6,6 @@ function ChatMessage({ message }) {
         <div
             style={{
                 ...threadStyles.chatMessage,
-                backgroundColor: message.user === "gpt" ? "#008f945e" : "",
             }}
         >
             <div style={threadStyles.avatarContainer}>

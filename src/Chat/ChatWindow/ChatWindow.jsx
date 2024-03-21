@@ -14,6 +14,7 @@ export default function ChatWindow(props) {
                 ...(expandWindow ? { ...styles.expandW } : {}),
                 ...{ opacity: props.visible ? "1" : "0" },
                 ...{ zIndex: props.visible ? "100" : "-10" },
+                ...{ color: expandWindow ? "white" : "black" },
             }}
         >
             <div
@@ -22,7 +23,7 @@ export default function ChatWindow(props) {
             >
                 {expandWindow ? (
                     <svg
-                        fill="#000000"
+                        fill="white"
                         height="18px"
                         width="18px"
                         version="1.1"

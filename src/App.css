@@ -1,9 +1,5 @@
 /* home page  */
 
-.main-container {
-
-}
-
 .home {
   display: flex;
   flex-direction: column;
@@ -74,8 +70,6 @@
 .header-container {
   position: absolute;
   top: 15%;
-  /* height: 100vh; */
-
 }
 
 
