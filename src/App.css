@@ -125,34 +125,6 @@
 
 
 
-/* navigation styles */
-.navigation-container {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-
-  display: flex;
-  /* align-items: center; */
-  /* padding: 1rem; */
-  margin-bottom: 2rem;
-}
-
-.navigation-container a {
-  margin: 2% 3%;
-  text-decoration: none;
-  color: #fff;
-  font-size: 1.3rem;
-  font-weight: 500;
-  transition: color 0.3s ease;
-  z-index: 100;
-}
-.navigation-container a:hover {
-  color: #ebe709;
-}
-
-
-
 
 /* about section */
 

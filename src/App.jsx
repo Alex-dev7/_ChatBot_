@@ -1,6 +1,6 @@
 import "./App.css";
 import ChatBot from "./Chat/ChatBot";
-import Nav from "./components/Nav";
+import Nav from "./Navigation/Nav";
 
 function App() {
   return (
