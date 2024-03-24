@@ -18,7 +18,7 @@
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-  background-image: url("home-bg.webp");
+  background-image: url("../public/home-bg.webp");
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
