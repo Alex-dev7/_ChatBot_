@@ -54,7 +54,14 @@ export const threadStyles = {
         width: "84%",
         paddingLeft: "42px",
     },
-    chatInputContainer: {},
+    inputButton: {
+        backgroundColor: "#00000000",
+        borderRadius: "10px",
+        border: "none",
+        position: "absolute",
+        right: "1%",
+        cursor: "pointer",
+    },
     formContainer: {
         with: "100%",
         height: "60px",

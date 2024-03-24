@@ -95,7 +95,7 @@ function ChatThread(props) {
                     )
                 )}
             </div>
-            <div style={threadStyles.chatInputContainer}>
+            <div >
                 <form
                     onSubmit={handleSubmit}
                     style={threadStyles.formContainer}
@@ -107,6 +107,26 @@ function ChatThread(props) {
                         id="chatInput"
                         style={threadStyles.chatInputArea}
                     ></input>
+                    <button
+                    type="submit"
+                        style={threadStyles.inputButton}
+                    >
+                        <svg
+                            width="30"
+                            height="30"
+                            viewBox="0 0 128 128"
+                            fill="none"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                d="M26.6667 64L23.4454 35.0027C22.5227 26.704 31.0667 20.608 38.6134 24.1867L102.315 54.3627C110.448 58.2133 110.448 69.7867 102.315 73.6373L38.6134 103.819C31.0667 107.392 22.5227 101.301 23.4454 93.0027L26.6667 64ZM26.6667 64H64"
+                                stroke="white"
+                                strokeWidth="8"
+                                strokeLinecap="round"
+                                strokeLinejoin="round"
+                            />
+                        </svg>
+                    </button>
                 </form>
             </div>
         </div>
