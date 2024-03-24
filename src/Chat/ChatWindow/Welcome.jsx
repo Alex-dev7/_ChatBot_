@@ -27,7 +27,7 @@ function Welcome(props) {
         console.log("submitting", name);
 
         // fetch a threadId
-        const response = await fetch("http://localhost:4000/thread", {
+        const response = await fetch(import.meta.env.VITE_BASE_URL + "/thread", {
             method: "GET",
             headers: {
                 "Content-Type": "application/json",

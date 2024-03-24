@@ -34,7 +34,7 @@ function ChatThread(props) {
                 console.log(id);
                 // fetch request to the API
                 const response = await fetch(
-                    `http://localhost:4000/list/${id}`
+                    `${import.meta.env.VITE_BASE_URL}/list/${id}`
                 );
                 const list = await response.json();
                 // setChatLog([...chatLog, {user: "gpt", message: list.messages[0][0].text.value}])
@@ -65,7 +65,7 @@ function ChatThread(props) {
        setInpuText("")
 
         // fetch request to the API
-        const response = await fetch("http://localhost:4000/message", {
+        const response = await fetch( import.meta.env.VITE_BASE_URL + "/message", {
             method: "POST",
             headers: {
                 "Content-Type": "application/json",

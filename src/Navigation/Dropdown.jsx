@@ -8,13 +8,13 @@ function Dropdown({ isOpen }) {
                     ...{opacity: isOpen ? "1" : ""}, }}
         >
             <li>
-                <Link to="#">Calculator</Link>
+                {/* <Link to="#">News/todo</Link> */}
             </li>
             <li>
-                <Link to="#">Solar</Link>
+                {/* <Link to="#">Solar Energy</Link> */}
             </li>
             <li>
-                <Link to="#">Quiz</Link>
+                {/* <Link to="#">Quiz</Link> */}
             </li>
         </ul>
     );
