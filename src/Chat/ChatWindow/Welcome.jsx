@@ -7,6 +7,8 @@ function Welcome(props) {
     const [loading, setLoading] = useState(false);
     const [inputValue, setInputValue] = useState("");
 
+
+
     useEffect(() => {
         const storedName = window.localStorage.getItem("user");
         const storedId = window.localStorage.getItem("threadId");
@@ -17,29 +19,37 @@ function Welcome(props) {
         }
     }, []);
 
+
+
     useEffect(() => {
         window.localStorage.setItem("user", name);
     }, [name]);
 
+
+
+
     async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
-        console.log("submitting", name);
 
         // fetch a threadId
-        const response = await fetch(import.meta.env.VITE_BASE_URL + "/thread", {
-            method: "GET",
-            headers: {
-                "Content-Type": "application/json",
-            },
-        });
+        const response = await fetch(
+            import.meta.env.VITE_BASE_URL + "/thread",
+            {
+                method: "GET",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+            }
+        );
         const data = await response.json();
-        console.log(data);
         props.setThreadId(data.threadId);
         window.localStorage.setItem("threadId", data.threadId);
 
-          setLoading(false);
+        setLoading(false);
     }
+
+
 
     return (
         <div
@@ -51,7 +61,7 @@ function Welcome(props) {
                 },
             }}
         >
-            {loading && <Spinner/>}
+            {loading && <Spinner />}
 
             <h3>Welcome, I am the Green Guru</h3>
             <div>

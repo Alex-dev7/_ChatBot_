@@ -1,10 +1,11 @@
-import { useEffect, useState } from "react";
+import { useEffect, useRef, useState } from "react";
 import { threadStyles } from "./threadStyles";
 import ChatMessage from "./components/ChatMessage";
+import TypingDots from "./components/TypingDots";
 
 function ChatThread(props) {
     const [inputText, setInpuText] = useState("");
-    const [userPrompt, setUserPrompt] = useState("");
+    const [loading, setLoading] = useState(false);
     const [userName, setUserName] = useState();
     const [chatLog, setChatLog] = useState([
         {
@@ -19,11 +20,21 @@ function ChatThread(props) {
         },
     ]);
 
+   // automatically scroll to the bottom of the chat log
+    const messagesEndRef = useRef(null);
+    const scrollToBottom = () => {
+        messagesEndRef.current?.scrollIntoView({ behavior: "smooth" });
+      }
+    useEffect(scrollToBottom, [chatLog])
+
+
+    // retrieve user name from local storage on mount
     useEffect(() => {
         const name = window.localStorage.getItem("user");
         setUserName(name);
-        console.log(name);
     }, []);
+
+
 
     // retrieve threadId from local storage and fetch data on mount
     useEffect(() => {
@@ -31,7 +42,6 @@ function ChatThread(props) {
 
         async function getMessagesList(id) {
             if (id) {
-                console.log(id);
                 // fetch request to the API
                 const response = await fetch(
                     `${import.meta.env.VITE_BASE_URL}/list/${id}`
@@ -51,7 +61,6 @@ function ChatThread(props) {
             }
         }
         getMessagesList(id);
-        console.log(chatLog);
     }, []);
 
 
@@ -59,29 +68,39 @@ function ChatThread(props) {
     // fetch data on submit
     async function handleSubmit(event) {
         event.preventDefault();
-        // setUserPrompt(inputText);
-        let newChatLog = [...chatLog, { user: "user", message: `${inputText}` }]
+        let newChatLog = [
+            ...chatLog,
+            { user: "user", message: `${inputText}` },
+        ];
         setChatLog(newChatLog)
-       setInpuText("")
+        setInpuText("")
+
+        setLoading(true)
 
         // fetch request to the API
-        const response = await fetch( import.meta.env.VITE_BASE_URL + "/message", {
-            method: "POST",
-            headers: {
-                "Content-Type": "application/json",
-            },
-            body: JSON.stringify({
-                threadId: props.threadId,
-                message: inputText,
-            }),
-        });
-         setInpuText("");
+        const response = await fetch(
+            import.meta.env.VITE_BASE_URL + "/message",
+            {
+                method: "POST",
+                headers: {
+                    "Content-Type": "application/json",
+                },
+                body: JSON.stringify({
+                    threadId: props.threadId,
+                    message: inputText,
+                }),
+            }
+        );
+        setInpuText("");
         const data = await response.json();
         setChatLog([
             ...newChatLog,
             { user: "gpt", message: data.messages[0][0].text.value },
         ]);
+        setLoading(false)
     }
+
+
 
     return (
         <div style={{ ...threadStyles.chatThread }}>
@@ -91,11 +110,13 @@ function ChatThread(props) {
             >
                 {chatLog.map((message, index) =>
                     message.message === "" ? null : (
-                        <ChatMessage key={index} message={message} />
+                     <ChatMessage key={index} message={message} loading={loading}/>
                     )
                 )}
+                { loading ? <TypingDots /> : null }
+                <div ref={messagesEndRef} />
             </div>
-            <div >
+            <div>
                 <form
                     onSubmit={handleSubmit}
                     style={threadStyles.formContainer}
@@ -107,10 +128,7 @@ function ChatThread(props) {
                         id="chatInput"
                         style={threadStyles.chatInputArea}
                     ></input>
-                    <button
-                    type="submit"
-                        style={threadStyles.inputButton}
-                    >
+                    <button type="submit" style={threadStyles.inputButton}>
                         <svg
                             width="30"
                             height="30"

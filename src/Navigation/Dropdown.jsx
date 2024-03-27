@@ -4,18 +4,14 @@ function Dropdown({ isOpen }) {
     return (
         <ul
             className="dropdown"
-            style={{ ...{ transform: isOpen ? "translateY(0)" : "" },
-                    ...{opacity: isOpen ? "1" : ""}, }}
+            style={{
+                ...{ transform: isOpen ? "translateY(0)" : "" },
+                ...{ opacity: isOpen ? "1" : "" },
+            }}
         >
-            <li>
-                {/* <Link to="#">News/todo</Link> */}
-            </li>
-            <li>
-                {/* <Link to="#">Solar Energy</Link> */}
-            </li>
-            <li>
-                {/* <Link to="#">Quiz</Link> */}
-            </li>
+            <li><Link to="#">News/todo</Link></li>
+            <li><Link to="#">Air Quality</Link></li>
+            <li><Link to="#">Quiz</Link></li>
         </ul>
     );
 }

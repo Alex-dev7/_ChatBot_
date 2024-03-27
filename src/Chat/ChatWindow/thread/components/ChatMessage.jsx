@@ -1,7 +1,8 @@
 import ReactMarkdown from "react-markdown";
 import { threadStyles } from "../threadStyles";
+import TypingDots from "./TypingDots";
 
-function ChatMessage({ message }) {
+function ChatMessage({ message, loading }) {
     return (
         <div
             style={{
@@ -21,12 +22,16 @@ function ChatMessage({ message }) {
                 </span>
             </div>
             <div style={threadStyles.message}>
+            
                 {message.user === "gpt" ? (
                     <ReactMarkdown>{message.message}</ReactMarkdown>
                 ) : (
                     message.message
                 )}
+                
             </div>
+
+
         </div>
     );
 }
