@@ -6,7 +6,6 @@ import TypingDots from "./components/TypingDots";
 function ChatThread(props) {
     const [inputText, setInpuText] = useState("");
     const [loading, setLoading] = useState(false);
-    // const [userName, setUserName] = useState();
     const [chatLog, setChatLog] = useState([
         {
             user: "gpt",
@@ -18,7 +17,7 @@ function ChatThread(props) {
         },
     ]);
 
-
+    const inputRef = useRef();
 
    // automatically scroll to the bottom of the chat log
     const messagesEndRef = useRef(null);
@@ -68,7 +67,7 @@ function ChatThread(props) {
         ];
         setChatLog(newChatLog)
         setInpuText("")
-        event.target.style.height = '40px'
+        inputRef.current.style.height = '40px';
 
         setLoading(true)
 
@@ -122,21 +121,18 @@ function ChatThread(props) {
                     style={threadStyles.formContainer}
                 >
                     <textarea
+                        ref={inputRef}
                         value={inputText}
                         onChange={(e) => {
                             setInpuText(e.target.value)
-                            // e.target.style.height = 'auto';/
-                            e.target.style.height = e.target.scrollHeight + 'px';
+                            e.target.style.height = 'auto'
+                            e.target.style.height = e.target.scrollHeight + '%'
                         }}
-                        onInput={(e) => {
-                            e.target.style.height = '40px';
-                            // e.target.style.height = e.target.scrollHeight + 'px';
-                          }}
-                        rows="1"
+                        // rows="1"
                         placeholder="Type your message here..."
                         id="chatInput"
                         style={{...threadStyles.chatInputArea}}
-                    ></textarea>
+                    />
                     <button type="submit" style={threadStyles.inputButton}>
                         <svg
                             width="30"
