@@ -67,7 +67,7 @@ function ChatThread(props) {
         ];
         setChatLog(newChatLog)
         setInpuText("")
-        inputRef.current.style.height = '40px';
+        inputRef.current.style.height = '20px';
 
         setLoading(true)
 
