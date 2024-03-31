@@ -19,7 +19,7 @@ function ChatBot() {
     }, [ref]);
 
     return (
-        <div>
+        <div className="chat-bot-container">
             <div ref={ref}>
                 <ChatWindow visible={visible} />
             </div>

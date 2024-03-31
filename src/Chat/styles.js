@@ -40,6 +40,7 @@ export const styles = {
         textAlign: "center",
         width: "100%",
         height: "100%",
+        overflow: "hidden",
         display: "flex",
         flexDirection: "column",
         transition: "all 0.5s ease",
@@ -111,13 +112,13 @@ export const styles = {
     },
     expand: {
         position: "absolute",
-        top: "24px",
+        top: "2px",
         right: "5px",
         width: "20px",
         height: "20px",
         cursor: "pointer",
         transition: "all 0.2s ease",
-        zIndex: "1000",
+        zIndex: "10000",
     },
     expandW: {
         color: "white",

@@ -73,22 +73,35 @@
   top: 15%;
 }
 
-
-.chatLogContainer::-webkit-scrollbar {
+#chatInput::-webkit-scrollbar {
   width: 4px;
 }
-
-.chatLogContainer::-webkit-scrollbar-track {
+#chatInput::-webkit-scrollbar-track {
   box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.648);
   border-radius: 4px;
 }
 
-.chatLogContainer::-webkit-scrollbar-thumb {
+#chatInput::-webkit-scrollbar-thumb {
   background: #7a7a7a;
   border-radius: 4px;
 }
 
-.chatLogContainer::-webkit-scrollbar-thumb:hover {
+
+ .chatLogContainer::-webkit-scrollbar {
+  width: 4px;
+}
+
+ .chatLogContainer::-webkit-scrollbar-track {
+  box-shadow: inset 0 0 5px rgba(128, 128, 128, 0.648);
+  border-radius: 4px;
+}
+
+ .chatLogContainer::-webkit-scrollbar-thumb {
+  background: #7a7a7a;
+  border-radius: 4px;
+}
+
+ .chatLogContainer::-webkit-scrollbar-thumb:hover {
   background: #555;
 }
 

@@ -1,29 +1,19 @@
 import { useEffect, useState } from "react";
-import { styles } from "../styles";
-import Spinner from "../../components/Spinner";
+import { styles } from "../../styles";
+import Spinner from "../../../components/Spinner";
 
 function Welcome(props) {
-    const [name, setName] = useState("");
+
     const [loading, setLoading] = useState(false);
     const [inputValue, setInputValue] = useState("");
 
 
 
-    useEffect(() => {
-        const storedName = window.localStorage.getItem("user");
-        const storedId = window.localStorage.getItem("threadId");
 
-        if (storedName && storedId) {
-            setName(storedName);
-            props.setThreadId(storedId);
-        }
-    }, []);
-
-
-
-    useEffect(() => {
-        window.localStorage.setItem("user", name);
-    }, [name]);
+    // useEffect(() => {
+    //     window.localStorage.setItem("user", name);
+        
+    // }, [name]);
 
 
 
@@ -43,8 +33,11 @@ function Welcome(props) {
             }
         );
         const data = await response.json();
-        props.setThreadId(data.threadId);
         window.localStorage.setItem("threadId", data.threadId);
+        window.localStorage.setItem("user", inputValue);
+        props.setThreadId(data.threadId);
+        console.log(data.threadId);
+        
 
         setLoading(false);
     }
@@ -53,9 +46,11 @@ function Welcome(props) {
 
     return (
         <div
+            className="wwlcome-window"
             style={{
                 ...styles.welcomeWindow,
                 ...{
+                    zIndex: props.visible ? "1000" : "-10",
                     height: props.visible ? "100%" : "0%",
                     opacity: props.visible ? "1" : "0",
                 },
@@ -78,14 +73,17 @@ function Welcome(props) {
                 <p style={{ fontSize: "17px" }}>What should I call you?</p>
                 <input
                     style={styles.nameInput}
-                    onChange={(e) => setName(e.target.value)}
-                    onClick={() => setInputValue("")}
+                    onChange={(e) => {
+                        props.setName(e.target.value);
+                        setInputValue(e.target.value)
+                    }}
+                    // onClick={() => setInputValue("")}
                     type="text"
                     name="name"
                     className="placeholder-color"
                     placeholder={inputValue}
                 />
-                {name && (
+                {inputValue && (
                     <button type="submit" style={styles.okButton}>
                         ok
                     </button>

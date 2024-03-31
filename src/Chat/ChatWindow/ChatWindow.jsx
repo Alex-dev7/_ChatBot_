@@ -1,19 +1,34 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { styles } from "../styles";
-import Welcome from "./Welcome";
+import Welcome from "./thread/Welcome";
 import ChatThread from "./thread/ChatThread";
 
 export default function ChatWindow(props) {
     const [threadId, setThreadId] = useState(null);
+    const [name, setName] = useState(null);
     const [expandWindow, setExpandWindow] = useState(false);
+
+
+
+    useEffect(() => {
+        const storedName = window.localStorage.getItem("user");
+        const storedId = window.localStorage.getItem("threadId");
+
+        setName(storedName);
+        setThreadId(storedId);
+        
+    }, []);
+
+
 
     return (
         <div
+        className="chat-window"
             style={{
                 ...styles.supportWindow,
                 ...(expandWindow ? { ...styles.expandW } : {}),
                 ...{ opacity: props.visible ? "1" : "0" },
-                ...{ zIndex: props.visible ? "100" : "-10" },
+                ...{ zIndex: props.visible ? "1000" : "-10" },
                 ...{ color: expandWindow ? "white" : "black" },
             }}
         >
@@ -71,13 +86,16 @@ export default function ChatWindow(props) {
             </div>
             <Welcome
                 setThreadId={(threadId) => setThreadId(threadId)}
-                visible={threadId === null}
+                setName={(name) => setName(name)}
+                threadId={threadId}
+                visible={threadId === null }
                 expandWindow={expandWindow}
             />
 
             <ChatThread
-                visible={threadId !== null}
+                visible={threadId !== null && name.length > 0}
                 threadId={threadId}
+                name={name}
                 expandWindow={expandWindow}
             />
         </div>

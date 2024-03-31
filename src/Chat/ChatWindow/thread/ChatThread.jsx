@@ -6,19 +6,19 @@ import TypingDots from "./components/TypingDots";
 function ChatThread(props) {
     const [inputText, setInpuText] = useState("");
     const [loading, setLoading] = useState(false);
-    const [userName, setUserName] = useState();
+    // const [userName, setUserName] = useState();
     const [chatLog, setChatLog] = useState([
         {
             user: "gpt",
-            message: `Hello ${
-                userName ? userName : "there"
-            }! I'm Green Guru, your personal sustainability assistant.`,
+            message: `## Greetings, Seekers of Sustainability! 🌿\n\nWelcome to the sanctuary of green wisdom and eco-enlightenment. May your journey towards a more sustainable existence be guided by the gentle whispers of Mother Nature herself. Embrace the beauty of sustainable living and let us walk this path together, hand in hand with this Planet. 🌍💚`,
         },
         {
             user: "user",
             message: "",
         },
     ]);
+
+
 
    // automatically scroll to the bottom of the chat log
     const messagesEndRef = useRef(null);
@@ -27,12 +27,6 @@ function ChatThread(props) {
       }
     useEffect(scrollToBottom, [chatLog])
 
-
-    // retrieve user name from local storage on mount
-    useEffect(() => {
-        const name = window.localStorage.getItem("user");
-        setUserName(name);
-    }, []);
 
 
 
@@ -74,6 +68,7 @@ function ChatThread(props) {
         ];
         setChatLog(newChatLog)
         setInpuText("")
+        event.target.style.height = '40px'
 
         setLoading(true)
 
@@ -103,7 +98,12 @@ function ChatThread(props) {
 
 
     return (
-        <div style={{ ...threadStyles.chatThread }}>
+        <div style={{ ...threadStyles.chatThread,
+            ...{
+                zIndex: props.visible ? "1000" : "-10",
+                height: props.visible ? "100%" : "0%",
+                opacity: props.visible ? "1" : "0",
+            }, }}>
             <div
                 className="chatLogContainer"
                 style={threadStyles.chatLogContainer}
@@ -121,13 +121,22 @@ function ChatThread(props) {
                     onSubmit={handleSubmit}
                     style={threadStyles.formContainer}
                 >
-                    <input
+                    <textarea
                         value={inputText}
-                        onChange={(e) => setInpuText(e.target.value)}
+                        onChange={(e) => {
+                            setInpuText(e.target.value)
+                            // e.target.style.height = 'auto';/
+                            e.target.style.height = e.target.scrollHeight + 'px';
+                        }}
+                        onInput={(e) => {
+                            e.target.style.height = '40px';
+                            // e.target.style.height = e.target.scrollHeight + 'px';
+                          }}
                         rows="1"
+                        placeholder="Type your message here..."
                         id="chatInput"
-                        style={threadStyles.chatInputArea}
-                    ></input>
+                        style={{...threadStyles.chatInputArea}}
+                    ></textarea>
                     <button type="submit" style={threadStyles.inputButton}>
                         <svg
                             width="30"
