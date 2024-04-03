@@ -128,7 +128,12 @@ function ChatThread(props) {
                             e.target.style.height = 'auto'
                             e.target.style.height = e.target.scrollHeight + '%'
                         }}
-                        // rows="1"
+                        onKeyDown={(e) => {
+                            if (e.key === 'Enter' && !e.shiftKey) {
+                              e.preventDefault();
+                              handleSubmit(e)
+                            }
+                          }}
                         placeholder="Type your message here..."
                         id="chatInput"
                         style={{...threadStyles.chatInputArea}}

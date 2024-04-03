@@ -59,7 +59,7 @@ export const threadStyles = {
         paddingLeft: "42px",
     },
     inputButton: {
-        backgroundColor: "#252525d2",
+        backgroundColor: "#25252500",
         borderRadius: "10px",
         height: '40px',
         border: "none",
