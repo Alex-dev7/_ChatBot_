@@ -121,7 +121,7 @@ export const styles = {
         zIndex: "10000",
     },
     expandW: {
-        color: "white",
+        color: "#191a19eb",
         width: "80vw",
         height: "80vh",
         right: "50%",
