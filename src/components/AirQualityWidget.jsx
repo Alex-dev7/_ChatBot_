@@ -8,12 +8,14 @@ const [background, setBackground] = useState(null)
 
 
 useEffect(() => {
+  console.log("use effect called")
   fetchAQIatLocation()
 }, [])
 
 
 
 const fetchAQIatLocation = async () => {
+  console.log("fetching data")
   try {
     const response = await fetch(`https://api.waqi.info/feed/here/?token=${import.meta.env.VITE_AQI_TOKEN}`)
     const data = await response.json()
@@ -21,11 +23,11 @@ const fetchAQIatLocation = async () => {
     if(response.ok && data.status === "ok") {
       setAirQualityData(data)
       setBackground(getAQIColor(data.data.aqi))
-      console.log(data.data.aqi)
+      console.log("data recieved")
     } 
   } catch (error) {
     console.error("NETWORK ERROR: ", error)
-
+    console.log("error occured", error)
   }
   
 }
