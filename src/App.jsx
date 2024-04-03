@@ -3,6 +3,7 @@ import ChatBot from "./Chat/ChatBot";
 import Nav from "./Navigation/Nav";
 import { useEffect, useState } from "react";
 import Modal from "./components/Modal";
+import AirQualityWidget from "./components/AirQualityWidget";
 
 function App() {
     const [showPopup, setShowPopup] = useState(false);
@@ -32,6 +33,7 @@ function App() {
         <main className="main-container">
             <div className="home">
                 <Nav />
+                <AirQualityWidget />
                 <div className="header-container">
                     <h1>Environmental Awareness Bot</h1>
 
