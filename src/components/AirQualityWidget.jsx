@@ -2,11 +2,13 @@ import { useState, useEffect } from "react"
 import "./AQIStyle.css"
 
 function AirQualityWidget() {
-const [airQualityData, setAirQualityData] = useState({})
+const [airQualityData, setAirQualityData] = useState(null)
+const [status, setStatus] = useState(null)
+const [background, setBackground] = useState(null)
 
 
 useEffect(() => {
-  // fetchAQIatLocation()
+  fetchAQIatLocation()
 }, [])
 
 
@@ -18,6 +20,7 @@ const fetchAQIatLocation = async () => {
     
     if(response.ok && data.status === "ok") {
       setAirQualityData(data)
+      setBackground(getAQIColor(data.data.aqi))
       console.log(data.data.aqi)
     } 
   } catch (error) {
@@ -27,17 +30,51 @@ const fetchAQIatLocation = async () => {
   
 }
 
+function getAQIColor(aqi) {
+  if (aqi <= 50) {
+    setStatus({level: "Good", implications: "Air quality is considered satisfactory, and air pollution poses little or no risk."})
+    return 'green';
+  } else if (aqi <= 100) {
+    setStatus({level: "Moderate", implications: "Air quality is acceptable; however, for some pollutants there may be a moderate health concern for a very small number of people who are unusually sensitive to air pollution."})
+    return 'yellow';
+  } else if (aqi <= 150) {
+    setStatus({level: "Unhealthy for Sensitive Groups", implications: "Members of sensitive groups may experience health effects. The general public is not likely to be affected."})
+    return 'orange';
+  } else if (aqi <= 200) {
+    setStatus({level: "Unhealthy", implications: "Everyone may begin to experience health effects; members of sensitive groups may experience more serious health effects."})
+    return 'red';
+  } else if (aqi <= 300) {
+    setStatus({level: "Very Unhealthy", implications: "Health warnings of emergency conditions. The entire population is more likely to be affected."})
+    return 'purple';
+  } else {
+    setStatus({level: "Hazardous", implications: "Health alert: everyone may experience more serious health effects. Everyone should avoid all outdoor exertion."})
+    return 'maroon';
+  }
+}
+
+
+
+
 // console.log(airQualityData.data.city.name)
 
-  return (
+  return <>
+  { airQualityData ? 
     <div className="location-aqi-container">
-        <h4>Air Quality</h4>
-        <div>
-          <span>Stillwater, New York, USA</span>
-          <span>15</span>
+        <div className="name-container">
+          <span>Air Quality: {status.level}</span> 
+          <span className="city-name">{airQualityData.data.city.name}</span>
         </div>
-    </div>
-  )
+        <div className="number-container"
+        style={{backgroundColor: background}}
+        >
+          <span className="aqi">{airQualityData.data.aqi}</span>
+        </div>
+    </div> 
+    : null
+  }
+  </>
+
+  
 }
 
 export default AirQualityWidget
