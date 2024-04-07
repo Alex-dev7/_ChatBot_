@@ -12,6 +12,7 @@
     background-color: rgba(0, 0, 0, 0.079);
     gap: 15px;
     z-index: 111;
+    transition: all 3s ease;
 }
 
 .name-container {
@@ -28,7 +29,6 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    /* background-color: rgba(12, 228, 63, 0.339); */
     opacity: 0.8;
 }
 

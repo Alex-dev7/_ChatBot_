@@ -1,5 +1,6 @@
 import { useState, useEffect } from "react"
 import "./AQIStyle.css"
+import Implications from "./Implications"
 
 function AirQualityWidget() {
 const [airQualityData, setAirQualityData] = useState(null)
@@ -70,6 +71,7 @@ function getAQIColor(aqi) {
         >
           <span className="aqi">{airQualityData.data.aqi}</span>
         </div>
+        {hover ? <Implications text={status.implications} />  : null}
     </div> 
     : null
   }
