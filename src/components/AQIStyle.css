@@ -11,6 +11,7 @@
     align-items: center;
     background-color: rgba(0, 0, 0, 0.079);
     gap: 15px;
+    z-index: 111;
 }
 
 .name-container {

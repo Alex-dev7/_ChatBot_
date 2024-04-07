@@ -192,9 +192,9 @@
 
 .modal-container {
   position: fixed;
-  top: 5%;
+  top: 15%;
   right: 5%;
-  /* transform: translateX(-150%) ; */
+  /* transform: translateX(-50%); */
   width: 300px;
   display: flex;
   justify-content: center;

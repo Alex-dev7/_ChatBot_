@@ -15,17 +15,14 @@ function App() {
         const storedName = window.localStorage.getItem("user");
         setName(storedName)
         if (name !== null) {
-          
-             setShowPopup(true);
-            console.log("showPopup set to true");
+             setShowPopup(true)
 
             setTimeout(() => {
-                setShowPopup(false);
-                console.log("showPopup set to false");
-            }, 8000);
+                setShowPopup(false)
+            }, 8000)
 
             }
-    }, []);
+    }, [])
 
 
 

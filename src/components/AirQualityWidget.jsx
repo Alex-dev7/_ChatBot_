@@ -5,17 +5,16 @@ function AirQualityWidget() {
 const [airQualityData, setAirQualityData] = useState(null)
 const [status, setStatus] = useState(null)
 const [background, setBackground] = useState(null)
+const [hover, setHover] = useState(false)
 
 
 useEffect(() => {
-  console.log("use effect called")
   fetchAQIatLocation()
 }, [])
 
 
 
 const fetchAQIatLocation = async () => {
-  console.log("fetching data")
   try {
     const response = await fetch(`https://api.waqi.info/feed/here/?token=${import.meta.env.VITE_AQI_TOKEN}`)
     const data = await response.json()
@@ -23,11 +22,10 @@ const fetchAQIatLocation = async () => {
     if(response.ok && data.status === "ok") {
       setAirQualityData(data)
       setBackground(getAQIColor(data.data.aqi))
-      console.log("data recieved")
     } 
   } catch (error) {
     console.error("NETWORK ERROR: ", error)
-    console.log("error occured", error)
+    // console.log("error occured", error)
   }
   
 }
@@ -57,11 +55,12 @@ function getAQIColor(aqi) {
 
 
 
-// console.log(airQualityData.data.city.name)
-
   return <>
   { airQualityData ? 
-    <div className="location-aqi-container">
+    <div
+    onMouseEnter={() => setHover(true)}
+    onMouseLeave={() => setHover(false)}
+    className="location-aqi-container">
         <div className="name-container">
           <span>Air Quality: {status.level}</span> 
           <span className="city-name">{airQualityData.data.city.name}</span>
