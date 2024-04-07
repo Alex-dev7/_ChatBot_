@@ -1,10 +1,12 @@
 import { useState } from "react";
 import "./style.css";
 import AQCard from "./AQCard";
+import { Link } from "react-router-dom";
 
 function AirQuality() {
   const [searchInput, setSearchInput] = useState("")
   const [AQData, setAQData] = useState(null)
+  const [error, setError] = useState(null)
 
   const handleChange = (e) => {
     setSearchInput(e.target.value)
@@ -25,27 +27,43 @@ function AirQuality() {
       const data = await response.json()
       console.log(data)
       if(response.ok && data.status === "ok") {
-        setAQData(data)
-       
+        setAQData(data.data)
+        setError(null)
       } 
+      if(data.status === "error") {
+        setError(data.data)
+      }
     } catch (error) {
       console.error("NETWORK ERROR: ", error)
-      // console.log("error occured", error)
+      console.log("error occured", error)
     }
     
   }
 
   return (
     <div className="aq-container">
-      <h1>Air Quality</h1>
+      <div className="navigation-container">
+        <Link className="" to="/">
+            Home
+        </Link>
+      </div>
       <div className="aq-search-container">
-        <p>Find the air quality in your area</p>
-        <form onSubmit={handleSubmit}>
-          <input type="text" placeholder="Enter your city" onChange={handleChange} value={searchInput} />
+        <h1>Air Quality</h1>
+        <p>Find the air quality in your area </p>
+
+        <form onSubmit={handleSubmit} className="aq-form">
+          <input type="text" placeholder="Enter your city" className="form-input" onChange={handleChange} value={searchInput} />
           <button type="submit" >Search</button>
         </form>
       </div>
-      <AQCard data={AQData} />
+      {AQCard !== null ? <AQCard data={AQData}  /> : null}
+      {error && (
+        <div>
+          <p>{error}</p>
+          <small><i>*Note: Big cities are more likely to have an AQ station.</i></small>        
+        </div>
+
+      )}
     </div>
   )
 }
