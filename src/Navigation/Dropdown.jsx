@@ -10,7 +10,7 @@ function Dropdown({ isOpen }) {
             }}
         >
             <li><Link to="#">News/todo</Link></li>
-            <li><Link to="#">Air Quality</Link></li>
+            <li><Link to="/aquality">Air Quality</Link></li>
             <li><Link to="#">Solar Map</Link></li>
         </ul>
     );
