@@ -21,7 +21,7 @@ export const styles = {
     },
     supportWindow: {
         position: "fixed",
-        bottom: "136px",
+        bottom: "120px",
         right: "24px",
         width: "440px",
         height: "640px",
@@ -121,11 +121,11 @@ export const styles = {
         zIndex: "10000",
     },
     expandW: {
-        color: "#191a19eb",
+        // color: "#242424ff",
         width: "80vw",
         height: "80vh",
         right: "50%",
         transform: "translateX(50%)",
-        backgroundColor: "#2a4d3aeb",
+        backgroundColor: "#a4b9aeec",
     },
 };

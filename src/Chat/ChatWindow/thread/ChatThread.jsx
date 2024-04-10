@@ -97,22 +97,30 @@ function ChatThread(props) {
 
 
     return (
-        <div style={{ ...threadStyles.chatThread,
-            ...{
-                zIndex: props.visible ? "1000" : "-10",
-                height: props.visible ? "100%" : "0%",
-                opacity: props.visible ? "1" : "0",
-            }, }}>
+        <div
+            style={{
+                ...threadStyles.chatThread,
+                ...{
+                    zIndex: props.visible ? "1000" : "-10",
+                    height: props.visible ? "100%" : "0%",
+                    opacity: props.visible ? "1" : "0",
+                },
+            }}
+        >
             <div
                 className="chatLogContainer"
                 style={threadStyles.chatLogContainer}
             >
                 {chatLog.map((message, index) =>
                     message.message === "" ? null : (
-                     <ChatMessage key={index} message={message} loading={loading}/>
+                        <ChatMessage
+                            key={index}
+                            message={message}
+                            loading={loading}
+                        />
                     )
                 )}
-                { loading ? <TypingDots /> : null }
+                {loading ? <TypingDots /> : null}
                 <div ref={messagesEndRef} />
             </div>
             <div>
@@ -124,35 +132,36 @@ function ChatThread(props) {
                         ref={inputRef}
                         value={inputText}
                         onChange={(e) => {
-                            setInpuText(e.target.value)
-                            e.target.style.height = 'auto'
-                            e.target.style.height = e.target.scrollHeight + '%'
+                            setInpuText(e.target.value);
+                            e.target.style.height = "auto";
+                            e.target.style.height = e.target.scrollHeight + "%";
                         }}
                         onKeyDown={(e) => {
-                            if (e.key === 'Enter' && !e.shiftKey) {
-                              e.preventDefault();
-                              handleSubmit(e)
+                            if (e.key === "Enter" && !e.shiftKey) {
+                                e.preventDefault();
+                                handleSubmit(e);
                             }
-                          }}
-                        placeholder="Type your message here..."
+                        }}
+                        placeholder="Ask a question..."
                         id="chatInput"
-                        style={{...threadStyles.chatInputArea}}
+                        style={{ ...threadStyles.chatInputArea }}
                     />
                     <button type="submit" style={threadStyles.inputButton}>
                         <svg
-                            width="30"
-                            height="30"
-                            viewBox="0 0 128 128"
-                            fill="none"
+                        id="send-icon"
                             xmlns="http://www.w3.org/2000/svg"
+                            width="25"
+                            height="25"
+                            viewBox="0 0 24 24"
                         >
-                            <path
-                                d="M26.6667 64L23.4454 35.0027C22.5227 26.704 31.0667 20.608 38.6134 24.1867L102.315 54.3627C110.448 58.2133 110.448 69.7867 102.315 73.6373L38.6134 103.819C31.0667 107.392 22.5227 101.301 23.4454 93.0027L26.6667 64ZM26.6667 64H64"
-                                stroke="white"
-                                strokeWidth="8"
-                                strokeLinecap="round"
-                                strokeLinejoin="round"
-                            />
+                            <g fill="currentColor">
+                                <path d="m14.854 11.974l1.415-1.414l-4.243-4.243l-4.243 4.243l1.414 1.414l1.829-1.828v7.537h2v-7.537z" />
+                                <path
+                                    fillRule="evenodd"
+                                    d="M1 19a4 4 0 0 0 4 4h14a4 4 0 0 0 4-4V5a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4zm4 2h14a2 2 0 0 0 2-2V5a2 2 0 0 0-2-2H5a2 2 0 0 0-2 2v14a2 2 0 0 0 2 2"
+                                    clipRule="evenodd"
+                                />
+                            </g>
                         </svg>
                     </button>
                 </form>

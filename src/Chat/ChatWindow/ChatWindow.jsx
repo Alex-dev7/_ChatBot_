@@ -38,7 +38,7 @@ export default function ChatWindow(props) {
             >
                 {expandWindow ? (
                     <svg
-                        fill="white"
+                        fill="black"
                         height="18px"
                         width="18px"
                         version="1.1"
