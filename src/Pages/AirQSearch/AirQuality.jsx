@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./style.css";
 import AQCard from "./AQCard";
 import { Link } from "react-router-dom";
+import PollutantInfo from "./PollutantInfo";
 
 function AirQuality() {
   const [searchInput, setSearchInput] = useState("")
@@ -47,16 +48,21 @@ function AirQuality() {
             Home
         </Link>
       </div>
-      <div className="aq-search-container">
-        <h1>Air Quality</h1>
-        <p>Find the air quality in your area </p>
 
-        <form onSubmit={handleSubmit} className="aq-form">
-          <input type="text" placeholder="Enter your city" className="form-input" onChange={handleChange} value={searchInput} />
-          <button type="submit" >Search</button>
-        </form>
+      <div className="results-container">
+        <div className="aq-search-container">
+          <h1>Air Quality</h1>
+          <small>Find the air quality in your area </small>
+
+          <form onSubmit={handleSubmit} className="aq-form">
+            <input type="text" placeholder="enter city/country" className="form-input" onChange={handleChange} value={searchInput} />
+            <button type="submit" >Search</button>
+          </form>
+        </div>
+        {AQData !== null ? <AQCard data={AQData}  /> : null}
+        {AQData !== null ? <PollutantInfo pollutant={AQData.dominentpol} aqi={AQData.aqi} /> : null}             
       </div>
-      {AQCard !== null ? <AQCard data={AQData}  /> : null}
+
       {error && (
         <div>
           <p>{error}</p>

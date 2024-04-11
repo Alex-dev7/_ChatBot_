@@ -7,7 +7,8 @@
     align-items: center;
     justify-content: center;
     overflow-x: hidden;
-    background-color: #3c4043;
+    background-color: #65b9d44e;
+    background-image: url('../../../public/topography.svg');
 }
 
 .back-link {
@@ -27,8 +28,7 @@
 }
 
 .aq-search-container {
-    position: absolute;
-    top: 10%;
+    position: relative;
     display: flex;
     flex-direction: column;
     align-items: center;
@@ -51,9 +51,10 @@ button {
     border: none;
     border-end-end-radius: 10px;
     border-top-right-radius: 10px;
-    background-color: #00000068;
+    background-color: #00000042;
     cursor: pointer;
     outline: none;
+    transition: all 0.3s;
 }
 button:hover {
     background-color: #000000;
@@ -67,10 +68,24 @@ button:hover {
     border-radius: 10px;
     font-size: 18px;
     outline: 1px solid rgba(0, 0, 0, 0.288);
+    background-color: #0000001b;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.288);
 }
 
 .form-input:focus {
     border: none;
+}
+
+.results-container {
+    position: relative;
+    width: 80%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+
 }
 
 
@@ -78,17 +93,29 @@ button:hover {
     width: 400px;
     display: flex;
     flex-direction: column;
-    /* align-items: center; */
     justify-content: center;
     margin: 10px;
     padding: 10px 25px;
-    /* border: 1px solid black; */
     border-radius: 10px;
     background-color: #0000001b;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.288);
 }
 
 span {
     font-size: 20px;
     font-weight: bold;
     color: rgb(255, 255, 255);
+}
+
+
+.pollutant-card {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    border-radius: 10px;
+    margin: 10px;
+    padding: 10px 25px;
+    width: 400px;
+    background-color: #857e046c;
+    box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.288);
 }

@@ -56,6 +56,7 @@ function getAQIColor(aqi) {
 
 
 
+
   return <>
   { airQualityData ? 
     <div

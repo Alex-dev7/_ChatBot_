@@ -5,9 +5,9 @@ const AQCard = ({data}) => {
     const {aqi, city, dominentpol, time} = data
   return (
     <div className="qa-card">
-        <h3>{city.name}</h3>
-        <h4>Air Quality Index: <span>{aqi}</span> </h4>
+        <h4>Location: <span>{city.name}</span></h4>
         <div>
+            <p>Air Quality Index: <span>{aqi}</span> </p>
             <p>Dominant Polluant: <span> {dominentpol}</span></p>
             <p>Last Updated: <span>{time.s}</span> </p>
         </div>
