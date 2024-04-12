@@ -37,3 +37,25 @@
     font-weight: 800;
     padding: 0 10px;
 }
+
+@media (max-width: 800px) {
+
+    .location-aqi-container {
+       top: 86%;
+  
+        right: 1%;
+        height: 45px;
+    }
+    .city-name {
+        font-size: 0.8rem;
+    }
+    .aqi {
+        font-size: 1.3rem;
+    }
+    .name-container {
+        flex-direction: row;
+        gap: 10px;
+        align-items: center;
+    }
+  
+  }

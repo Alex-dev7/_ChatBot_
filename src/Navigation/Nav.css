@@ -59,3 +59,29 @@
     margin: 15px 0;
   
 }
+
+@media (max-width: 800px) {
+    .navigation-container {
+      position: absolute;
+      /* top: 40%; */
+      left: 0%;
+      /* transform: translateX(-50%); */
+      top: 0%;
+      /* bottom: 0%; */
+      display: flex;
+      /* flex-direction: column; */
+      align-items: center;
+      justify-content: center;
+      gap: 2rem;
+       width: fit-content;
+    }
+    .navigation-container a {
+        font-size: 1rem;
+        margin: 0;
+    }
+
+    .dropdown-container {
+      margin: 0px;
+
+    }
+}
