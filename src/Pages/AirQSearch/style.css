@@ -5,9 +5,10 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    justify-content: center;
+    justify-content: flex-start;
+    padding-top: 10%;
     overflow-x: hidden;
-    background-color: #65b9d44e;
+    background-color: #65b8d476;
     background-image: url('../../../public/topography.svg');
 }
 
@@ -71,6 +72,9 @@ button:hover {
     background-color: #0000001b;
     box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.288);
 }
+input::placeholder {
+    color: #f8f8f866;
+}
 
 .form-input:focus {
     border: none;
@@ -118,4 +122,30 @@ span {
     width: 400px;
     background-color: #857e046c;
     box-shadow: 0 10px 10px 5px rgba(0, 0, 0, 0.288);
+}
+
+
+@media (max-width: 800px) {
+    .form-input {
+        width: 300px;
+        padding: 10px 15px;
+        font-size: 15px;
+    }
+    button {
+        position: absolute;
+        font-size: 15px;
+        right: 2%;
+        padding: 10px;
+        margin: 10px;
+    
+    }
+    .results-container {
+        width: 100%;
+    }
+    .qa-card {
+        width: 80%;
+    }
+    .pollutant-card {
+        width: 80%;
+    }
 }
