@@ -32,7 +32,7 @@ function App() {
                 <Nav />
                 <AirQualityWidget />
                 <div className="header-container">
-                    <h1>Environmental Awareness Bot</h1>
+                    <h1 className="title">Environmental Awareness Bot</h1>
 
                     <ChatBot />
                 </div>

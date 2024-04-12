@@ -11,7 +11,7 @@
   background-color: #242424;
   color: #fff;
   font-family: "Inter", sans-serif;
-  font-size: 1.5rem;
+  
   line-height: 1.5;
   font-weight: 400;
   font-synthesis: none;
@@ -25,6 +25,24 @@
   position: relative;
 
 }
+
+.title {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  justify-self: center;
+  width: 100vw;
+  font-size: 6rem;
+  font-weight: 900;
+  margin-top: 10%;
+  color: #f7f7f7a0;
+  -webkit-text-stroke: #99a418 0.5px ;
+  position: absolute;
+  top: 0%;
+  transform: translateX(-50%);
+  padding: 0;
+}
+
 
 .tree-div {
   position: fixed;
@@ -257,4 +275,26 @@
 }
 #send-icon:hover {
   color: #f5f5f5d3;
+}
+
+
+@media (max-width: 1800px) {
+  .title {
+    font-size: 4rem;
+  }
+
+}
+@media (max-width: 1000px) {
+  .title {
+    font-size: 2.5rem;
+  }
+
+}
+@media (max-width: 800px) {
+  .title {
+    font-size: 2rem;
+    display: block;
+    text-align: center;
+  }
+
 }
