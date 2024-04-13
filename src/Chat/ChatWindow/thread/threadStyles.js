@@ -81,13 +81,12 @@ export const threadStyles = {
         position: "absolute",
         minWidth: "90%",
         bottom: "0%",
-        height: '20px',
+        height: '30px',
         backgroundColor: "#252525d2",
         fontSize: "16px",
-        borderRadius: "10px",
         border: "none",
-        padding: "10px 20px",
-        paddingRight: "10px",
+        padding: "10px 20px 5px 10px",
+        paddingRight: "20px",
        
     },
 };

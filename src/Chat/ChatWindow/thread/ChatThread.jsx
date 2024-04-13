@@ -134,7 +134,7 @@ function ChatThread(props) {
                         onChange={(e) => {
                             setInpuText(e.target.value);
                             e.target.style.height = "auto";
-                            e.target.style.height = e.target.scrollHeight + "%";
+                            e.target.style.height = e.target.scrollHeight + "px";
                         }}
                         onKeyDown={(e) => {
                             if (e.key === "Enter" && !e.shiftKey) {
