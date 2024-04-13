@@ -28,7 +28,9 @@ function About() {
                     create ripple effects of change across the vast ocean of
                     existence.
                 </p>
+                
                 <blockquote>
+                    <hr/>
                     <p>
                         Let us walk this path together, with humility, empathy,
                         and a deep respect for all beings.
@@ -36,6 +38,11 @@ function About() {
                     <cite>- Green Guru</cite>
                 </blockquote>
             </div>
+            <footer>
+               <p>built with 💚 by <a href="https://github.com/Alex-dev7" target="_blank">Alexei Rusu</a></p>
+               <p>AQ data provided by <a href="https://waqi.info/" target="_blank">World Air Quality Index </a> </p> 
+               <p>&copy; 2024 Green Guru</p>
+            </footer>
         </div>
     );
 }
