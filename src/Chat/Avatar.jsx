@@ -10,7 +10,7 @@ export default function Avatar(props) {
             <div
                 style={{
                     ...styles.avatarHello,
-                    ...{ opacity: hovered ? "1" : "0" },
+                    ...{ opacity: hovered ? "0.7" : "0" },
                 }}
             >
                 click to interact
@@ -24,6 +24,7 @@ export default function Avatar(props) {
                     style={styles.hoverArea}
                 ></span>
                 <img
+                    draggable="false"
                     src="tree.svg"
                     alt="tree"
                     className="tree"

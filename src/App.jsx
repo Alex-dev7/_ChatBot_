@@ -27,11 +27,11 @@ function App() {
 
 
     return (
-        <main className="main-container">
-            <div className="home">
+        <main className="main-container" >
+            <div className="home" draggable="false">
                 <Nav />
                 <AirQualityWidget />
-                <div className="header-container">
+                <div className="header-container" draggable="false">
                     <h1 className="title">Environmental Awareness Bot</h1>
 
                     <ChatBot />

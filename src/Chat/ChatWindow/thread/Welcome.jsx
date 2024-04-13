@@ -8,16 +8,6 @@ function Welcome(props) {
     const [inputValue, setInputValue] = useState("");
 
 
-
-
-    // useEffect(() => {
-    //     window.localStorage.setItem("user", name);
-        
-    // }, [name]);
-
-
-
-
     async function handleSubmit(event) {
         event.preventDefault();
         setLoading(true);
