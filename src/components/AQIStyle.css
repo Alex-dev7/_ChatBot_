@@ -6,7 +6,6 @@
     padding: 0 20px;
     border-radius: 10px;
     display: flex;
-    /* flex-direction: column; */
     justify-content: center;
     align-items: center;
     background-color: rgba(0, 0, 0, 0.079);
@@ -38,11 +37,19 @@
     padding: 0 10px;
 }
 
+.implications {
+    position: absolute;
+    top: 102%;
+    background-color: #02172948;
+    padding: 0 10px;
+    font-size: 15px;
+    border-radius: 10px;
+}
+
 @media (max-width: 800px) {
 
     .location-aqi-container {
-       top: 86%;
-  
+        top: 89%;
         right: 1%;
         height: 45px;
     }
@@ -52,10 +59,18 @@
     .aqi {
         font-size: 1.3rem;
     }
+    .aq-title {
+        font-size: 0.9rem;
+    }
     .name-container {
         flex-direction: row;
         gap: 10px;
         align-items: center;
     }
-  
+    .implications {
+        top: -200%;
+        background-color: #021729b7;
+        font-size: 14px;
+        padding: 0 10px;
+    }
   }

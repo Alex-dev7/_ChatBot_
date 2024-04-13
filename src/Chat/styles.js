@@ -112,7 +112,7 @@ export const styles = {
     },
     expand: {
         position: "absolute",
-        top: "0px",
+        top: "8px",
         right: "5px",
         width: "20px",
         height: "20px",
