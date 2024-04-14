@@ -82,6 +82,20 @@
 
     .dropdown-container {
       margin: 0px;
+      /* outline: auto; */
 
+    }
+    .dropdown {
+      background-color: #0d0e0dd4;
+      padding: 10px 0px;
+      gap: 5px;
+      width: 102vw;
+      height: 200px;
+      top: 5vh;
+      left: -200%;
+      /* margin: 0 auto; */
+      /* transform:  translateX(100%); */
+      text-align: center;
+      justify-content: center;
     }
 }
