@@ -1,12 +1,22 @@
 /* home page  */
+.main-container {
+  height: 100vh;
+  width: 100%;
+  max-width: 2100px;
+  margin: 0 auto;
+  overflow: hidden;
 
+}
 .home {
+  position: relative;
   display: flex;
   flex-direction: column;
   align-items: center;
   /* justify-content: center; */
   height: 100vh;
   width: 100%;
+  max-width: 2100px;
+  margin: 0 auto;
   overflow: hidden;
   background-color: #242424;
   color: #fff;
@@ -21,7 +31,7 @@
   background-size: cover;
   background-repeat: no-repeat;
   background-position: center;
-  position: fixed;
+ 
 
 }
 
@@ -86,8 +96,9 @@
 }
 
 .header-container {
-  position: absolute;
-  top: 15%;
+  
+  /* position: absolute; */
+  top: 0%;
 }
 
 #chatInput::-webkit-scrollbar {

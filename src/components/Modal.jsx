@@ -20,7 +20,7 @@ function Modal(props) {
 
 Modal.propTypes = {
     showPopup: PropTypes.bool.isRequired,
-    name: PropTypes.string.isRequired,
+    name: PropTypes.string,
 };
 
 

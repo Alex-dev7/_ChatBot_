@@ -2,14 +2,20 @@
     position: relative;
     width: 100vw;
     height: 100vh;
+    max-width: 2100px;
+    margin: 0 auto;
+    overflow: hidden;
     display: flex;
     flex-direction: column;
     align-items: center;
     justify-content: flex-start;
     padding-top: 10%;
     overflow-x: hidden;
-    background-color: #65b8d476;
+    background-color: #045a7c91;
     background-image: url('../../../public/topography.svg');
+    /* background-repeat: no-repeat; */
+    background-position: center ;
+    object-fit: cover;
 }
 
 .back-link {

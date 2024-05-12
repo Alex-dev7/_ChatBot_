@@ -21,7 +21,7 @@ export const styles = {
         transition: "all 0.2s ease",
     },
     supportWindow: {
-        position: "fixed",
+        position: "absolute",
         bottom: "10%",
         right: "24px",
         width: "440px",
@@ -156,7 +156,7 @@ export const styles = {
         right: "0",
         maxWidth: "100vw",
         maxHeight: "100%",
-        backgroundColor: "#a4b9aeec",
+        backgroundColor: "#a4b9aebd",
         zIndex: "10000",
     },
 };

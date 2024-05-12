@@ -66,7 +66,7 @@ const PollutantInfo = ({ pollutant, aqi }) => {
             <p className="card-text">{getPollutantInfo(pollutant)}</p>
         </div>
       </div>
-      <div className="pollutant-card" style={{backgroundColor: status.color, opacity: "0.7"}}>
+      <div className="pollutant-card" style={{backgroundColor: status.color, opacity: "0.6", color: "black"}}>
         <div >
             <h4 className="card-title">AQI {aqi}</h4>
             <h5>Level: {status.level}</h5>

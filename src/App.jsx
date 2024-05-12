@@ -1,6 +1,6 @@
 import "./App.css";
 import ChatBot from "./Chat/ChatBot";
-import Nav from "./Navigation/Nav";
+import Nav from "./components/Navigation/Nav";
 import { useEffect, useState } from "react";
 import Modal from "./components/Modal";
 import AirQualityWidget from "./components/AirQualityWidget";
@@ -29,15 +29,17 @@ function App() {
     return (
         <main className="main-container" >
             <div className="home" draggable="false">
-                <Nav />
+               
                 <AirQualityWidget />
                 <div className="header-container" draggable="false">
+                    <Nav /> 
                     <h1 className="title">Environmental Awareness Bot</h1>
 
                     <ChatBot />
                 </div>
+                <Modal showPopup={showPopup} name={name} />
             </div>
-            <Modal showPopup={showPopup} name={name} />
+        
         </main>
     );
 }

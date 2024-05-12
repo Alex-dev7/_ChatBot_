@@ -36,6 +36,6 @@ export default function Avatar(props) {
 }
 
 Avatar.propTypes = {
-    style: PropTypes.object.isRequired,
+    style: PropTypes.object,
     onClick: PropTypes.func.isRequired,
 }   

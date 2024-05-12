@@ -56,6 +56,15 @@ function ChatThread(props) {
         getMessagesList(id);
     }, []);
 
+    useEffect(() => {
+        inputRef.current.style.height = 'auto';
+        if(inputRef.current.scrollHeight < 450) {
+            inputRef.current.style.height = `${inputRef.current.scrollHeight}px`;
+        } else if(inputRef.current.scrollHeight > 450) {
+            inputRef.current.style.height = '450px'
+        }
+        
+    }, [inputText])
 
 
     // fetch data on submit
@@ -129,12 +138,11 @@ function ChatThread(props) {
                     style={threadStyles.formContainer}
                 >
                     <textarea
+                      
                         ref={inputRef}
                         value={inputText}
                         onChange={(e) => {
                             setInpuText(e.target.value);
-                            e.target.style.height = "auto";
-                            e.target.style.height = e.target.scrollHeight + "px";
                         }}
                         onKeyDown={(e) => {
                             if (e.key === "Enter" && !e.shiftKey) {
@@ -144,8 +152,9 @@ function ChatThread(props) {
                         }}
                         placeholder="Ask a question..."
                         id="chatInput"
+                        rows={1}
                         style={{ ...threadStyles.chatInputArea }}
-                    />
+                    ></textarea>
                     <button type="submit" style={threadStyles.inputButton}>
                         <svg
                         id="send-icon"

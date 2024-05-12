@@ -79,14 +79,16 @@ export const threadStyles = {
     },
     chatInputArea: {
         position: "absolute",
-        minWidth: "90%",
+        width: "85%",
         bottom: "0%",
         height: '30px',
-        backgroundColor: "#252525d2",
+        backgroundColor: "#252525e7",
         fontSize: "16px",
         border: "none",
-        padding: "10px 20px 5px 10px",
-        paddingRight: "20px",
-       
+        paddingTop: "10px",
+        paddingLeft: "10px",
+        paddingRight: "30px",
+        borderRadius: "10px",
+     
     },
 };
