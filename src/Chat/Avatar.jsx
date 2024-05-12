@@ -1,6 +1,6 @@
 import { useState } from "react";
-
 import { styles } from "./styles";
+import PropTypes from 'prop-types';
 
 export default function Avatar(props) {
     const [hovered, setHovered] = useState(false);
@@ -35,4 +35,7 @@ export default function Avatar(props) {
     );
 }
 
-Avatar;
+Avatar.propTypes = {
+    style: PropTypes.object.isRequired,
+    onClick: PropTypes.func.isRequired,
+}   

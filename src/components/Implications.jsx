@@ -1,11 +1,16 @@
 import "./AQIStyle.css"
+import PropTypes from 'prop-types';
 
 function Implications(props) {
     return (
         <div  className="implications">
             <p>{props.text}</p>
         </div>
-    );
+    )
+}
+
+Implications.propTypes = {
+    text: PropTypes.string.isRequired,
 }
 
 export default Implications;

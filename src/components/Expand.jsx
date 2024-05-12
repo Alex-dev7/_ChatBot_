@@ -1,4 +1,4 @@
-
+import PropTypes from 'prop-types';
 
 function Expand({expandWindow}) {
   return (
@@ -52,6 +52,9 @@ function Expand({expandWindow}) {
         )}
     </>
   )
+}
+Expand.propTypes = {
+    expandWindow: PropTypes.bool.isRequired,
 }
 
 export default Expand

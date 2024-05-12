@@ -1,3 +1,5 @@
+import PropTypes from 'prop-types';
+
 function Modal(props) {
     return (
         <div
@@ -15,5 +17,11 @@ function Modal(props) {
         </div>
     );
 }
+
+Modal.propTypes = {
+    showPopup: PropTypes.bool.isRequired,
+    name: PropTypes.string.isRequired,
+};
+
 
 export default Modal;

@@ -3,6 +3,7 @@ import { styles } from "../styles";
 import Welcome from "./thread/Welcome";
 import ChatThread from "./thread/ChatThread";
 import Expand from "../../components/Expand";
+import PropTypes from 'prop-types';
 
 export default function ChatWindow(props) {
     const [threadId, setThreadId] = useState(null);
@@ -76,4 +77,8 @@ export default function ChatWindow(props) {
             />
         </div>
     );
+}
+
+ChatWindow.propTypes = {
+    visible: PropTypes.bool.isRequired,
 }
