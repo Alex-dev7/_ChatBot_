@@ -1,8 +1,9 @@
+import React from "react";
 import "./AQIStyle.css"
 import PropTypes from 'prop-types';
 
-function Implications(props) {
-    return (
+const Implications = (props) => {
+   if (props.text) return (
         <div  className="implications">
             <p>{props.text}</p>
         </div>

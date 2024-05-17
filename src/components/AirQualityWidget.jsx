@@ -72,7 +72,7 @@ function getAQIColor(aqi) {
         >
           <span className="aqi">{airQualityData.data.aqi}</span>
         </div>
-        {hover ? <Implications text={status.implications} />  : null}
+         <Implications text={status.implications} />  
     </div> 
     : null
   }
