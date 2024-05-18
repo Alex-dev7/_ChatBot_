@@ -20,7 +20,6 @@ useEffect(() => {
       
       
 }, [])
-// added cachi
 
 function getAQIColor(aqi) {
   if (aqi <= 50) {

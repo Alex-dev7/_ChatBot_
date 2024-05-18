@@ -1,10 +1,10 @@
+import React from 'react';
 import PropTypes from 'prop-types';
 
 function Modal({name, showPopup}) {
     return (
         <div
             className="modal-container"
-            data-testid="modal"
             style={{
                 transform: showPopup
                     ? "translateX(0%)"
