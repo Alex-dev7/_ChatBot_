@@ -1,19 +1,20 @@
 import PropTypes from 'prop-types';
 
-function Modal(props) {
+function Modal({name, showPopup}) {
     return (
         <div
             className="modal-container"
+            data-testid="modal"
             style={{
-                transform: props.showPopup
+                transform: showPopup
                     ? "translateX(0%)"
                     : "translateX(160%)",
-                opacity: props.showPopup
+                opacity: showPopup
                     ? "1"
                     : "0",
             }}
         >
-            <h3>Welcome back, {props.name} ! </h3>
+            <h3>Welcome back, {name} ! </h3>
         </div>
     );
 }

@@ -12,12 +12,12 @@ export const styles = {
     },
     avatarHello: {
         position: "absolute",
-        right: "-30px",
-        top: "65vh",
+        left: "30%",
+        top: "60%",
         width: "100px",
         fontSize: "15px",
         zIndex: "10",
-        color: "black",
+        color: "white",
         transition: "all 0.2s ease",
     },
     supportWindow: {

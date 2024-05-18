@@ -1,6 +1,8 @@
 import { useState, useEffect } from "react"
 import "./AQIStyle.css"
 import Implications from "./Implications"
+import  { fetchAQIatLocation } from "../utility/airQuality"
+
 
 function AirQualityWidget() {
 const [airQualityData, setAirQualityData] = useState(null)
@@ -10,26 +12,15 @@ const [hover, setHover] = useState(false)
 
 
 useEffect(() => {
-  fetchAQIatLocation()
+      fetchAQIatLocation()
+        .then(data => {
+          setAirQualityData(data)
+          setBackground(getAQIColor(data.data.aqi))
+        })
+      
+      
 }, [])
-
-
-
-const fetchAQIatLocation = async () => {
-  try {
-    const response = await fetch(`https://api.waqi.info/feed/here/?token=${import.meta.env.VITE_AQI_TOKEN}`)
-    const data = await response.json()
-    
-    if(response.ok && data.status === "ok") {
-      setAirQualityData(data)
-      setBackground(getAQIColor(data.data.aqi))
-    } 
-  } catch (error) {
-    console.error("NETWORK ERROR: ", error)
-    // console.log("error occured", error)
-  }
-  
-}
+// added cachi
 
 function getAQIColor(aqi) {
   if (aqi <= 50) {
@@ -54,9 +45,6 @@ function getAQIColor(aqi) {
 }
 
 
-
-
-
   return <>
   { airQualityData ? 
     <div
@@ -72,7 +60,7 @@ function getAQIColor(aqi) {
         >
           <span className="aqi">{airQualityData.data.aqi}</span>
         </div>
-         <Implications text={status.implications} />  
+        { hover && <Implications text={status.implications} />  }
     </div> 
     : null
   }

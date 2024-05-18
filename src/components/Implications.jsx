@@ -3,15 +3,15 @@ import "./AQIStyle.css"
 import PropTypes from 'prop-types';
 
 const Implications = (props) => {
-   if (props.text) return (
-        <div  className="implications">
+   if (props.text.length > 0) return (
+        <div  className="implications" data-testid="implications">
             <p>{props.text}</p>
         </div>
     )
 }
 
 Implications.propTypes = {
-    text: PropTypes.string.isRequired,
+    text: PropTypes.string
 }
 
 export default Implications;
