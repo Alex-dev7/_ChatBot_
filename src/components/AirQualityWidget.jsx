@@ -45,12 +45,14 @@ function getAQIColor(aqi) {
 }
 
 
-  return <>
+  return <div>
   { airQualityData ? 
     <div
     onMouseEnter={() => setHover(true)}
     onMouseLeave={() => setHover(false)}
-    className="location-aqi-container">
+    className="location-aqi-container"
+    data-testid="location-aqi-container">
+   
         <div className="name-container">
           <span className="aq-title">Air Quality: {status.level}</span> 
           <span className="city-name">{airQualityData.data.city.name}</span>
@@ -64,7 +66,7 @@ function getAQIColor(aqi) {
     </div> 
     : null
   }
-  </>
+  </div>
 
   
 }
