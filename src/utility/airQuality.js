@@ -24,7 +24,7 @@ export const fetchAQIatLocation = async () => {
       }
   
       if (data.status === "ok") {
-        return data
+        return data 
       }
     } catch (error) {
       console.error("NETWORK ERROR: ", error);
