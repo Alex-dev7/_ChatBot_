@@ -60,7 +60,7 @@ function getAQIColor(aqi) {
         <div className="number-container"
         style={{backgroundColor: background}}
         >
-          <span className="aqi">{airQualityData.data.aqi}</span>
+          <span className="aqi" style={{color: "black"}}>{airQualityData.data.aqi}</span>
         </div>
         { hover && <Implications text={status.implications} />  }
     </div> 
